@@ -88,13 +88,15 @@ nav a {
 }
 @media (min-width: 440px) {
   nav a {
-    display: inline;
+    display: block;
   }
   #dropdown-button, #dropdown-list {
     display: none;
   }
 }
 nav .logo {
+  display: block;
+  float: none;
   padding: 15px 10px;
   font-size: 120%;
   color: white;
