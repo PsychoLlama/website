@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* Generics */
 html {
   font-family: 'helvetica neue',
   helvetica,
@@ -28,16 +29,57 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* Nav */
 nav {
   background-color: #171714;
-  border-bottom: 2px solid #101010;
-  padding: 20px 20px;
   line-height: 100%;
 }
 nav a {
-  margin: 0 10px;
+  margin: 0;
+  padding: 15px;
+  display: none;
+}
+@media (min-width: 440px) {
+  nav a {
+    display: inline;
+  }
+}
+nav .logo {
+  padding: 15px 10px;
+  font-size: 120%;
+  color: white;
 }
 nav .active {
-  color: #A6E22D;
-  font-weight: bold;
+  color: #AE81FF;
+}
+
+/* Generic class */
+.center {
+  text-align: center;
+}
+
+.element {
+  color: #F92772;
+}
+.args {
+  color: #FD9720;
+}
+
+/* Main section */
+.main {
+  margin: 0;
+  border-top: 3px solid #10100D;
+}
+.main .welcome {
+  margin-top: 35px;
+  font-size: 160%;
+}
+
+
+@media (min-width: 550px) {
+  .main .welcome {
+    font-size: 225%;
+    margin-top: 75px;
+  }
 }
