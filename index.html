@@ -49,8 +49,7 @@
         
         <p class='description center'>
           TechLlama is home to web development projects authored
-          by <a href="about/index.html">Jesse Gibson</a>.
-          <span class="blink">|</span>
+          by <a href="about/index.html">Jesse Gibson</a>.<span class="blink">&marker;</span>
         </p>
         
         <hr>
@@ -131,6 +130,23 @@
           if (height) height = 0;
           else height = 130;
         });
+      })();
+      
+      (function() {
+        var blink, opaque, i;
+        
+        blink = document.querySelectorAll('.blink');
+        opaque = true;
+        
+        for (i = 0; i < blink.length; i++) {
+          currentBlink = blink[i]; 
+          setInterval(function() {
+            TweenLite.to(currentBlink, 1, {
+              opacity: (opaque = !opaque),
+              ease: Circ.easeOut
+            });
+          }, 1500);
+        }
       })();
     </script>
   </body>
