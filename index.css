@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+html {
+  font-family: 'helvetica neue',
+  helvetica,
+  sans-serif;
+  color: #F8F8F2;
+  border-color: #F8F8F2;
+  background-color: #272822;
+}
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  float: right;
+}
+a:hover {
+  text-decoration: underline;
+}
+nav {
+  background-color: #171714;
+  border-bottom: 2px solid #101010;
+  padding: 20px 20px;
+  line-height: 100%;
+}
+nav a {
+  margin: 0 10px;
+}
+nav .active {
+  color: #A6E22D;
+  font-weight: bold;
+}
