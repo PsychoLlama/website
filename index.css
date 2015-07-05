@@ -8,6 +8,7 @@ html {
   color: #F8F8F2;
   border-color: #F8F8F2;
   background-color: #272822;
+  font-size: 16px;
 }
 body {
   margin: 0;
@@ -40,9 +41,18 @@ nav a {
   padding: 15px;
   display: none;
 }
+#dropdown {
+  float: right;
+  padding: 15px;
+  font-weight: 600;
+  font-size: 30px;
+}
 @media (min-width: 440px) {
   nav a {
     display: inline;
+  }
+  #dropdown {
+    display: none;
   }
 }
 nav .logo {
@@ -75,7 +85,13 @@ nav .active {
   margin-top: 35px;
   font-size: 160%;
 }
-
+.main .description {
+  padding: 25px 35px;
+  text-align: center;
+  font-size: 110%;
+  
+  margin: 10px auto;
+}
 
 @media (min-width: 550px) {
   .main .welcome {
