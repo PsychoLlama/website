@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* Generics */
+/* Generics: elements*/
 html {
   font-family: 'helvetica neue',
   helvetica,
@@ -30,6 +30,12 @@ a {
 a:hover {
   text-decoration: underline;
 }
+hr {
+  margin: 10px 0 50px;
+  border: none;
+  border-top: 2px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
 
 /* Nav */
 nav {
@@ -46,6 +52,7 @@ nav a {
   padding: 15px;
   font-weight: 600;
   font-size: 30px;
+  cursor: pointer;
 }
 @media (min-width: 440px) {
   nav a {
@@ -64,31 +71,17 @@ nav .active {
   color: #AE81FF;
 }
 
-/* Generic class */
-.center {
-  text-align: center;
-}
-
-.element {
-  color: #F92772;
-}
-.args {
-  color: #FD9720;
-}
-
 /* Main section */
 .main {
   margin: 0;
   border-top: 3px solid #10100D;
 }
 .main .welcome {
-  margin-top: 35px;
+  margin-top: 75px;
   font-size: 160%;
 }
 .main .description {
-  padding: 25px 35px;
-  text-align: center;
-  font-size: 110%;
+  padding: 15px 35px 35px;
   
   margin: 10px auto;
 }
@@ -96,6 +89,43 @@ nav .active {
 @media (min-width: 550px) {
   .main .welcome {
     font-size: 225%;
-    margin-top: 75px;
   }
 }
+
+/* Generics: classes */
+.center {
+  text-align: center;
+}
+.description {
+  font-size: 110%;
+  padding: 15px 35px 35px;
+}
+@media (min-width: 768px) {
+  hr {
+    margin: 10px 0;
+  }
+  .third {
+    padding: 30px 0;
+    width: 33.3333%;
+    float: left;
+  }
+}
+
+  /* Generics: color */
+.element {
+  color: #F92772;
+}
+.args {
+  color: #FD9720;
+}
+.name {
+  color: #A6E22D;
+}
+.value {
+  color: #AE81FF;
+}
+.string {
+  color: #E6DB74;
+}
+
+/* Thirds */
