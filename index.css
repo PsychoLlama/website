@@ -14,7 +14,7 @@ html {
 }
 #container {
   position: relative;
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 body,
@@ -25,6 +25,16 @@ h4,
 h5,
 h6 {
   margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+li {
+  padding: 10px 20px;
+  background-color: #1f1f1c;
+  border-bottom: 1px solid #181815;
 }
 a {
   text-decoration: none;
@@ -37,7 +47,6 @@ section {
   padding-bottom: 80px;
 }
 hr {
-  margin: 10px 0 50px;
   border: none;
   border-top: 2px solid rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -58,6 +67,7 @@ footer {
 nav {
   background-color: #171714;
   line-height: 100%;
+  border-bottom: 3px solid #10100D;
 }
 nav a {
   margin: 0;
@@ -72,11 +82,15 @@ nav a {
   font-size: 30px;
   cursor: pointer;
 }
+#dropdown-list {
+  height: 0px;
+  overflow: hidden;
+}
 @media (min-width: 440px) {
   nav a {
     display: inline;
   }
-  #dropdown-button {
+  #dropdown-button, #dropdown-list {
     display: none;
   }
 }
@@ -92,7 +106,6 @@ nav .active {
 /* Main section */
 .main {
   margin: 0;
-  border-top: 3px solid #10100D;
 }
 .main .welcome {
   margin-top: 40px;
@@ -102,6 +115,9 @@ nav .active {
   padding: 15px 35px 35px;
   
   margin: 10px auto;
+}
+.description + hr {
+  margin-bottom: 50px;
 }
 
 @media (min-width: 550px) {
