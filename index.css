@@ -101,7 +101,7 @@ nav .logo {
   font-size: 120%;
   color: white;
 }
-nav .active {
+.active {
   color: #AE81FF;
 }
 
