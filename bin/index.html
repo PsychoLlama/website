@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jesse Gibson | TechLlama</title>
+    <meta charset='utf-8'>
+    <meta name="viewport"
+    content="width=device-width,
+    initial-scale=1">
+    <link rel="stylesheet" href="../index.css" type="text/css" />
+  </head>
+  <body>
+    <div id='container'>
+      
+      <nav>
+        <div id="dropdown-button">&dtrif;</div>
+        <a href="portfolio/index.html">Portfolio</a>
+        <a href="bin/index.html">The Bin</a>
+        <a href='//medium.com/@ReignOfLlama'>Blog</a>
+        
+        <a class='logo' href="//techllama.com/index.html">
+          <h1>
+              TechLlama
+          </h1>
+        </a>
+      </nav>
+      
+      <div id="dropdown-list" class='gray'>
+        <ul>
+          <li>
+            <a href="//medium.com/@ReignOfLlama">Blog</a>
+          </li>
+          
+          <li>
+            <a href="bin/index.html">The Bin</a>
+          </li>
+          
+          <li>
+            <a href='portfolio/index.html'>
+              Portfolio
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <section class='main'>
+        <h1 class='welcome center'>
+        &lt;<span class="element">h1</span>&gt; The Bin &lt;/<span class="element">h1</span>&gt;
+        </h1>
+        
+        <p class='description center'>
+          A collection of some slightly unfinished projects.
+        </p>
+        
+        <hr>
+        
+        <div class="third center">
+          <h1>
+            <a href='boxgame/index.html'>
+              Box Game
+            </a>
+          </h1>
+          
+          <p class="description">
+            
+          </p>
+        </div>
+      
+      <footer class='gray center'>
+        Site owned and operated by
+        <a href="about/index.html">Jesse Gibson</a>.<br>
+        Design inspired by
+        <a href="http://www.sublimetext.com/">
+          Sublime Text Editor</a>.
+      </footer>
+    </div>
+    
+    <!--TweenLite Animation-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+    <script>
+      // Dropdown animations
+      (function() {
+        var button, deg, list, height;
+      
+        button = document.getElementById('dropdown-button');
+        list = document.getElementById('dropdown-list');
+      
+        deg = 0;
+        height = 130;
+        
+        button.addEventListener('click', function() {
+          TweenLite.to(button, 0.5, {
+            transform: 'rotateX(' + (deg += 180) + 'deg)',
+            ease: Bounce.easeOut
+          });
+          TweenLite.to(list, 0.5, {
+            height: height,
+            ease: Circ.easeOut
+          });
+          if (height) height = 0;
+          else height = 130;
+        });
+      })();
+      
+      // Blink animation
+      (function() {
+        var blink, opaque, i;
+        
+        blink = document.querySelectorAll('.blink');
+        opaque = true;
+        
+        for (i = 0; i < blink.length; i++) {
+          currentBlink = blink[i]; 
+          setInterval(function() {
+            TweenLite.to(currentBlink, 1, {
+              opacity: (opaque = !opaque),
+              ease: Circ.easeOut
+            });
+          }, 1500);
+        }
+      })();
+    </script>
+  </body>
+</html>
