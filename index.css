@@ -137,9 +137,7 @@ nav .logo {
   border-radius: 10px;
   max-width: 95%;
   display: block;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto;
 }
 
 /* Generics: classes */
