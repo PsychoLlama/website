@@ -15,6 +15,7 @@ html {
 #container {
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 body,
@@ -43,9 +44,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-section {
-  padding-bottom: 80px;
-}
 hr {
   border: none;
   border-top: 2px solid rgba(0, 0, 0, 0.08);
@@ -58,7 +56,6 @@ footer {
   right: 0;
   font-size: 75%;
   padding: 20px;
-  clear: both;
   background-color: #171714;
   border-top: 2px solid #10100D;
 }
@@ -108,6 +105,7 @@ nav .logo {
 /* Main section */
 .main {
   margin: 0;
+  margin-bottom: 80px;
 }
 .main .welcome {
   margin-top: 40px;
@@ -133,6 +131,16 @@ nav .logo {
 .third .description {
   padding: 15px 20px 35px;
 }
+.third iframe {
+  max-height: 150px;
+  overflow: auto;
+  border-radius: 10px;
+  max-width: 95%;
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Generics: classes */
 .center {
@@ -156,6 +164,9 @@ nav .logo {
     padding: 30px 0;
     width: 33.3333%;
     float: left;
+    margin-bottom: 50px;
+  }
+  .main {
     margin-bottom: 0;
   }
 }
