@@ -201,9 +201,9 @@ nav .logo {
 .black {
   color: #171714;
 }
-.fa.black:hover {
+.black:hover .fa {
   color: #131310;
 }
-.fa.function:hover {
+.function:hover .fa {
   color: #56C9DF;
 }
