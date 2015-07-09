@@ -194,14 +194,16 @@ nav .logo {
 }
 .function {
   color: #66D9EF;
-} .function:hover {
-  color: #56C9DF;
 }
 .gray {
   color: #868686;
 }
 .black {
   color: #171714;
-} .black:hover {
+}
+.fa.black:hover {
   color: #131310;
+}
+.fa.function:hover {
+  color: #56C9DF;
 }
