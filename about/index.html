@@ -7,6 +7,7 @@
     content="width=device-width,
     initial-scale=1">
     <link rel="stylesheet" href="../index.css" type="text/css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
   <body>
     <div id='container'>
@@ -48,24 +49,63 @@
       
       <section class='main'>
         <h1 class='welcome center'>
-        &lt;<span class="element">h1</span>&gt; About Me &lt;/<span class="element">h1</span>&gt;
+          <img src="profile.png"></img>
         </h1>
         
         <p class='description center'>
-          <span class='blink'>&marker;</span>
+          I'm an Alaskan guy in pursuit of a dream;<br>
+          become a professional web
+          developer.<span class='blink'>&marker;</span>
         </p>
         
         <hr>
         
         <div class="third center">
           <h2>
-            <a href="speech/index.html" class='function'>
-              ( GitHub )
+            <a href="//github.com/PsychoLlama" class='black'>
+              <span class="fa fa-github fa-4x"></span>
             </a>
           </h2>
           
           <p class="description">
-            Follow my coding progress on GitHub.
+            Many of my projects are hosted on GitHub.
+            <a href="//github.com/PsychoLlama">Head over and check it out!</a>
+          </p>
+        </div>
+        
+        
+        <div class="third center">
+          <h2>
+            <a href="//twitter.com/ReignOfLlama" class='function'>
+              <span class="fa fa-twitter fa-4x"></span>
+            </a>
+          </h2>
+          
+          <p class="description">
+            Tweet me at my twitter tweeter.
+          </p>
+        </div>
+        
+        
+        <!--Temporary solution. Implement permanent by 07/15/15-->
+        <div class="third center" style='position: relative;'>
+          <h2>
+            <span class="fa fa-suitcase fa-4x args"></span>
+          </h2>
+          
+          <p class="description">
+            Like what you see?<br>
+            <script>
+              function injectPhone(tag) {
+                var a = document.createElement('a');
+                a.href = 'tel:19078888321';
+                a.innerHTML = '+1 (907) 888-8321';
+                
+                tag.innerHTML = '';
+                tag.appendChild(a);
+              }
+            </script>
+            <span onclick='injectPhone(this)' style='cursor: pointer;'><span style='border-bottom: 1px dotted'>Contact me</span> and we can do business.</span>
           </p>
         </div>
       </section>
