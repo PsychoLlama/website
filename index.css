@@ -194,6 +194,8 @@ nav .logo {
 }
 .function {
   color: #66D9EF;
+} .function:hover {
+  color: #56C9DF;
 }
 .gray {
   color: #868686;
