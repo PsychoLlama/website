@@ -131,12 +131,9 @@ nav .logo {
 .third .description {
   padding: 15px 20px 35px;
 }
-.third iframe {
-  max-height: 150px;
-  overflow: auto;
+.third img {
   border-radius: 10px;
   max-width: 95%;
-  display: block;
   margin: 20px auto;
 }
 
