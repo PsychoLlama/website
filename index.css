@@ -111,6 +111,12 @@ nav .logo {
   margin-top: 40px;
   font-size: 160%;
 }
+.welcome img {
+  border-radius: 50%;
+  padding: 2px;
+  background-color: #f8f8f8;
+  box-shadow: 0 5px 0 2px #171714;
+}
 .main .description {
   padding: 15px 35px 35px;
   
@@ -165,6 +171,9 @@ nav .logo {
   .main {
     margin-bottom: 0;
   }
+  .description img {
+    margin-top: 75px;
+  }
 }
 
   /* Generics: color */
@@ -188,4 +197,9 @@ nav .logo {
 }
 .gray {
   color: #868686;
+}
+.black {
+  color: #171714;
+} .black:hover {
+  color: #131310;
 }
