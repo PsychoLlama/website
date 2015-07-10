@@ -41,3 +41,29 @@ window.addEventListener('load', function() {
     }
   })();
 });
+
+// Place contact information
+window.addEventListener('load', function() {
+  var contacts = document.querySelectorAll('.contact');
+  
+  if (!contacts) return;
+  
+  for (var i = 0; i < contacts.length; i++) {
+    handleClicks(contacts[i]);
+  }
+  
+  function handleClicks(tag) {
+    tag.addEventListener('click', function() {
+      var a, sibling;
+      sibling = tag.nextElementSibling;
+      
+      a = document.createElement('a');
+      a.href = 'tel:19078888321';
+      a.innerHTML = '+1 (907) 888-8321';
+      
+      sibling.innerHTML = tag.innerHTML + ': ';
+      sibling.appendChild(a);
+      tag.outerHTML = '';
+    });
+  }
+});
