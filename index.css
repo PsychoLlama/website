@@ -41,8 +41,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
-a:hover {
+a:hover, .contact:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 hr {
   border: none;
