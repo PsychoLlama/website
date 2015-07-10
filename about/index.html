@@ -87,32 +87,22 @@
         </div>
         
         
-        <!--Temporary solution. Implement permanent by 07/15/15-->
-        <div class="third center" style='position: relative;'>
+        <div class="third center">
           <h2>
             <span class="fa fa-suitcase fa-4x args"></span>
           </h2>
           
           <p class="description">
             Like what you see?<br>
-            <script>
-              function injectPhone(tag) {
-                var a = document.createElement('a');
-                a.href = 'tel:19078888321';
-                a.innerHTML = '+1 (907) 888-8321';
-                
-                tag.innerHTML = '';
-                tag.appendChild(a);
-              }
-            </script>
-            <span onclick='injectPhone(this)' style='cursor: pointer;'><span style='border-bottom: 1px dotted'>Contact me</span> and we can do business.</span>
+            <span class='contact'>Contact me</span>
+            <span>and we can do business.</span>
           </p>
         </div>
       </section>
       
       <footer class='gray center'>
         Site owned and operated by
-        Jesse Gibson.<br>
+        <a href="#" class='active'>Jesse Gibson</a>.<br>
         Design inspired by
         <a href="http://www.sublimetext.com/">
           Sublime Text Editor</a>.
