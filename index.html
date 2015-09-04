@@ -1,120 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
-    <title>Jesse Gibson | TechLlama</title>
-    <meta charset='utf-8'>
-    <meta name="viewport"
-    content="width=device-width,
-    initial-scale=1">
-    <link rel="stylesheet" href="index.css" type="text/css" />
+    <title>About Jesse Gibson | TechLlama</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div id='container'>
+    <div class="all-content">
       
-      <nav>
-        <div id="dropdown-button">&dtrif;</div>
-        <a href="portfolio/index.html">Portfolio</a>
-        <a href="bin/index.html">The Bin</a>
-        <a href='//medium.com/@ReignOfLlama'>Blog</a>
-        
-        <a class='logo' href="//techllama.com/index.html">
-          <h1>
-              TechLlama
-          </h1>
-        </a>
+    <!--Navbar-->
+      <nav class="navbar ledge">
+        <span class="pad-content pull-left active">Home</span>
+        <div class="pull-right">
+          <div class="mobile-show tablet-hide">
+            <a href="#" class="fa fa-bars fa-1x"></a>
+          </div>
+          <div class="pull-right mobile-hide tablet-show">
+            <a href="https://medium.com/@ReignOfLlama" class="pad-content pull-left">Blog</a>
+            <a href="bin/" class="pad-content pull-left">Bin</a>
+            <a href="portfolio/" class="pad-content pull-left">Portfolio</a>
+          </div>
+        </div>
       </nav>
-      
-      <div id="dropdown-list" class='gray'>
-        <ul>
-          <a href="//medium.com/@ReignOfLlama">
-            <li>
-              Blog
-            </li>
-          </a>
-          
-          <a href="bin/index.html">
-            <li>
-              The Bin
-            </li>
-          </a>
-          
-          <a href='portfolio/index.html'>
-            <li>
-                Portfolio
-            </li>
-          </a>
-        </ul>
-      </div>
-      
-      <section class='main'>
-        <h1 class='welcome center'>
-        &lt;<span class="element">h1</span>&gt;
-        Welcome! &lt;/<span class="element">h1</span>&gt;
-        </h1>
-        
-        <p class='description center'>
-          TechLlama is home to web development projects authored
-          by <a href="about/index.html">Jesse
-          Gibson</a>.<span class="blink">&marker;</span>
-        </p>
-        
-        <hr>
-        
-        <div class="third center">
-          <h2>
-            <span class="function">
-              <a href="//medium.com/@ReignOfLlama">
-                ( Blog )
-              </a>
-            </span>
-          </h2>
-          <p class='description'>
-            Where I put my spare thoughts.
-            I'd avoid it if I were you.
+
+      <!--Jumbotron-->
+      <header class="jumbotron text-center ledge">
+        <div class="pad-responsive">
+          <h1 class="heading text-spread">
+            Hell<span class="last-letter">o</span>
+          </h1>
+          <p class="lead text-muted">
+            I'm Jesse Gibson, an aspiring web developer.
           </p>
         </div>
-        
-        <div class="third center">
-          <h2>
-            <span class="name">
-              <a href="bin/index.html">
-                ( The Bin )
-              </a>
-            </span>
-          </h2>
-          <p class='description'>
-            For all my mad experiments that should
-            probably stay in a box somewhere. 
-          </p>
+      </header>
+
+      <section class="pad-content-vertical">
+
+        <div class="row pad-content-vertical">
+
+          <div class="mobile-12 tablet-4 pad-content">
+            <div class="mobile-2 text-center">
+              <span class="fa fa-pencil fa-1x"></span>
+            </div>
+
+            <div class="mobile-10">
+              <h3 class="title lead">
+                <a href="https://medium.com/@ReignOfLlama">Blog</a>
+              </h3>
+              <p>
+                I occasionally write short web development tutorials here, and
+                other completely unrelated posts.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="mobile-12 tablet-4 pad-content">
+            <div class="mobile-2 text-center">
+              <span class="fa fa-suitcase fa-1x"></span>
+            </div>
+
+            <div class="mobile-10">
+              <h3 class="title lead">
+                <a href="bin/">Bin</a>
+              </h3>
+              <p>
+                Some substantial projects have come from testing new
+                tools and features. This is where I keep them.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="mobile-12 tablet-4 pad-content">
+            <div class="mobile-2 text-center">
+              <span class="fa fa-briefcase fa-1x"></span>
+            </div>
+
+            <div class="mobile-10">
+              <h3 class="title lead">
+                <a href="portfolio/">Portfolio</a>
+              </h3>
+              <p>
+                A collection of my proudest achievements,
+                from the beginning of my learning to the present day.
+              </p>
+            </div>
+
+          </div>
+
         </div>
-        
-        <div class="third center">
-          <h2>
-            <span class="args">
-              <a href="portfolio/index.html">
-                ( Portfolio )
-              </a>
-            </span>
-          </h2>
-          <p class='description'>
-            A collection of my greatest projects,
-            ready for public exposure. 
-          </p>
-        </div>
+
       </section>
-      
-      <footer class='gray center'>
-        Site owned and operated by
-        <a href="about/index.html">Jesse Gibson</a>.<br>
-        Design inspired by
-        <a href="http://www.sublimetext.com/">
-          Sublime Text Editor</a>.
-      </footer>
-    </div>
     
-    <!--TweenLite Animation-->
-    <script
-    src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+    
+    </div><!-- Everything that isn't the sidebar -->
+    
+    <!--Sidebar-->
+    <aside class="sidebar mobile-show tablet-hide">
+      <ul>
+        <li>
+          <a class="pad-content ledge pad-content-vertical sidebar-item"
+             href="https://medium.com/@ReignOfLlama/">
+            Blog
+          </a>
+        </li>
+        <li>
+          <a class="pad-content ledge pad-content-vertical sidebar-item" href="bin/">
+            Bin
+          </a>
+        </li>
+        <li>
+          <a class="pad-content ledge pad-content-vertical sidebar-item" href="portfolio/">
+            Portfolio
+          </a>
+        </li>
+      </ul>
+    </aside>
+    
+    <script type="text/javascript" src="script.js">
+    </script>
   </body>
 </html>

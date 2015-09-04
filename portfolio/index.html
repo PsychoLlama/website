@@ -1,144 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
-    <title>My Portfolio | TechLlama</title>
-    <meta charset='utf-8'>
-    <meta name="viewport"
-    content="width=device-width,
-    initial-scale=1">
-    <link rel="stylesheet" href="../index.css" type="text/css" />
+    <title>About Jesse Gibson | TechLlama</title>
+    <meta charset="utf-8">
+    
+    <!--Boilercrate-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    
+    <!--Font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div id='container'>
+    <div class="all-content">
       
-      <nav>
-        <div id="dropdown-button">&dtrif;</div>
-        <a href="#" class='active'>Portfolio</a>
-        <a href="../bin/index.html">The Bin</a>
-        <a href='//medium.com/@ReignOfLlama'>Blog</a>
-        
-        <a class='logo' href="//techllama.com/index.html">
-          <h1>
-              TechLlama
-          </h1>
-        </a>
+      <!--Navbar-->
+      <nav class="navbar ledge">
+        <a href="/" class="pull-left pad-content">Home</a>
+        <div class="pull-right">
+          <div class="mobile-show tablet-hide">
+            <a href="#" class="fa fa-bars fa-1x"></a>
+          </div>
+          <div class="pull-right mobile-hide tablet-show">
+            <a href="https://medium.com/@ReignOfLlama" class="pad-content pull-left">Blog</a>
+            <a href="../bin/" class="pad-content pull-left">Bin</a>
+            <span class="pad-content pull-left active">Portfolio</span>
+          </div>
+        </div>
       </nav>
       
-      <div id="dropdown-list" class='gray'>
-        <ul>
-          <a href="//medium.com/@ReignOfLlama">
-            <li>
-              Blog
-            </li>
-          </a>
-          
-          <a href="../bin/index.html">
-            <li>
-              The Bin
-            </li>
-          </a>
-          
-          <a href='#' class='active'>
-            <li>
-              Portfolio
-            </li>
-          </a>
-        </ul>
+      <div class="jumbotron text-center ledge">
+        <h1 class='title text-spread'>Portfoli<span class="last-letter">o</span></h1>
+        <p class="lead">
+          Here is a collection of my greatest works.
+        </p>
       </div>
       
-      <section class='main'>
-        <h1 class='welcome center'>
-        &lt;<span class="element">h1</span>&gt; Portfolio &lt;/<span class="element">h1</span>&gt;
-        </h1>
+      <div class="row pad-content pad-content-vertical">
         
-        <p class='description center'>
-          Here are some of my greatest achievements.<span class="blink">&marker;</span>
-        </p>
-        
-        <hr>
-        
-        <div class="third center">
-          <h2>
-            <span class="function">
-              <a href="geo-tagging/index.html">
-                ( Geo Tagging Concept )
-              </a>
-            </span>
+        <div class="mobile-12 tablet-4 pad-content">
+          <h2 class="title">
+            <a href="geo-tagging/">
+              Geo Tagging
+            </a>
           </h2>
-          <p class='description'>
-            A recreation of Cosmin Capitanu's
+
+          <p>
+            Famous Dribbble designer
+            <a href="https://dribbble.com/radium">Cosmin Capitanu</a>
+            uploaded
             <a href="https://dribbble.com/shots/953800-Geo-Tagging">
-              Geo Tagging concept design</a>.
-              
-            <img src="geo-tagging/preview.png"
-            alt='A preview of the geo tagging concept page'></img>
+              this PSD</a>. I interpreted it into code.
           </p>
         </div>
         
-        <div class="third center">
-          <h2>
-            <span class="name">
-              <a href="//github.com/PsychoLlama/CallbackJS">
-                ( CallbackJS )
-              </a>
-            </span>
+        <div class="mobile-12 tablet-4 pad-content">
+          <h2 class="title">
+            <a href="callback-js/">
+              CallbackJS
+            </a>
           </h2>
-          <p class='description'>
-            An open-source library for making
-            custom events and powerful callbacks.
-              
-            <img src="callback-js/preview.png"
-            alt='A preview of the CallbackJS documentation page'></img>
+
+          <p>
+            An open-source library for crafting custom events and powerful
+            callbacks.
           </p>
         </div>
         
-        <div class="third center">
-          <h2>
-            <span class="args">
-              <a href="menu/index.html">
-                ( Menu Concept )
-              </a>
-            </span>
+        <div class="mobile-12 tablet-4 pad-content">
+          <h2 class="title">
+            <a href="menu/">
+              Menu concept
+            </a>
           </h2>
-          <p class='description'>
-            A recreation of Shadman Ahmed's
-            <a href="https://dribbble.com/shots/1885965-Card-Freebie">
-              concept menu design</a>.
-              
-              <img src="menu/preview.png"
-              alt='A preview of the menu concept page'></img>
+
+          <p>
+            Another Dribbler,
+            <a href="https://dribbble.com/shadsahm">Shadman Ahmed</a>,
+            posted
+            <a href="https://dribbble.com/shots/1885965-Card-Freebie">this PSD</a>.
+            It's now recreated in HTML &amp; CSS.
           </p>
         </div>
         
-        <div class="third center">
-          <h2>
-            <span class="element">
-              <a href="themuskdirectories/index.html">
-                ( TheMuskDirectories )
-              </a>
-            </span>
+        <div class="mobile-12 tablet-4 pad-content">
+          <h2 class="title">
+            <a href="themuskdirectories/">
+              The Musk Directories
+            </a>
           </h2>
-          <p class='description'>
-            A website I designed and built as a final project
-            in Dave Partee's web design class.
-            
-            <img src="themuskdirectories/preview.png"
-            alt='A preview of The Musk Directories'></img>
+
+          <p>
+            This site was one of my first projects. It is a static collection of
+            pages, each detailing a company owned or influenced by Elon Musk.
           </p>
         </div>
-      </section>
+        
+      </div><!--row-->
       
-      <footer class='gray center'>
-        Site owned and operated by
-        <a href="../about/index.html">Jesse Gibson</a>.<br>
-        Design inspired by
-        <a href="http://www.sublimetext.com/">
-          Sublime Text Editor</a>.
-      </footer>
-    </div>
+    </div><!-- Everything that isn't the sidebar -->
     
-    <!--TweenLite Animation-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
-    <script type="text/javascript" src="/index.js"></script>
+    <!--Sidebar-->
+    <aside class="sidebar mobile-show tablet-hide">
+      <ul>
+        <li>
+          <a class="pad-content ledge pad-content-vertical sidebar-item"
+             href="https://medium.com/@ReignOfLlama">
+            Blog
+          </a>
+        </li>
+        <li>
+          <a class="pad-content ledge pad-content-vertical sidebar-item" href="../bin/">
+            Bin
+          </a>
+        </li>
+        <li class="pad-content ledge pad-content-vertical sidebar-item active">
+            Portfolio
+        </li>
+      </ul>
+    </aside>
+    
+    <!--Sidebar reveal code-->
+    <script type="text/javascript" src="../script.js">
+    </script>
   </body>
 </html>

@@ -1,161 +1,144 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
-    <title>The Bin | TechLlama</title>
-    <meta charset='utf-8'>
-    <meta name="viewport"
-    content="width=device-width,
-    initial-scale=1">
-    <link rel="stylesheet" href="/index.css" type="text/css" />
+    <title>About Jesse Gibson | TechLlama</title>
+    <meta charset="utf-8">
+    
+    <!--Boilercrate-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    
+    <!--Font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div id='container'>
+    <div class="all-content">
       
-      <nav>
-        <div id="dropdown-button">&dtrif;</div>
-        <a href="../portfolio/index.html">Portfolio</a>
-        <a href="#" class='active'>The Bin</a>
-        <a href='//medium.com/@ReignOfLlama'>Blog</a>
-        
-        <a class='logo' href="//techllama.com/index.html">
-          <h1>
-              TechLlama
-          </h1>
-        </a>
+      <!--Navbar-->
+      <nav class="navbar ledge">
+        <a href="/" class="pull-left pad-content">Home</a>
+        <div class="pull-right">
+          <div class="mobile-show tablet-hide">
+            <a href="#" class="fa fa-bars fa-1x"></a>
+          </div>
+          <div class="pull-right mobile-hide tablet-show">
+            <a href="https://medium.com/@ReignOfLlama" class="pad-content pull-left">Blog</a>
+            <span class="pad-content pull-left active sidebar-item active">Bin</span>
+            <a href="../portfolio/" class="pad-content pull-left">Portfolio</a>
+          </div>
+        </div>
       </nav>
       
-      <div id="dropdown-list" class='gray'>
-        <ul>
-          <a href="//medium.com/@ReignOfLlama">
-            <li>
-              Blog
-            </li>
-          </a>
-          
-          <a href="#" class='active'>
-            <li>
-              The Bin
-            </li>
-          </a>
-          
-          <a href='../portfolio/index.html'>
-            <li>
-              Portfolio
-            </li>
-          </a>
-        </ul>
+      <div class="jumbotron text-center ledge">
+        <h1 class='title'>Welcome</h1>
+        <p class="lead">
+          Here are all the projects that come from trying new things.
+        </p>
       </div>
       
-      <section class='main'>
-        <h1 class='welcome center'>
-        &lt;<span class="element">h1</span>&gt;
-        The Bin &lt;/<span class="element">h1</span>&gt;
-        </h1>
+      <div class="row pad-content pad-content-vertical">
         
-        <p class='description center'>
-          A collection of some slightly unfinished
-          projects.<span class='blink'>&marker;</span>
-        </p>
-        
-        <hr>
-        
-        <div class="third center">
-          <h2>
-            <a href='boxgame/index.html' class='function'>
-              ( Box Game )
+        <div class="mobile-12 tablet-4 pad-content">
+          <h2 class="title">
+            <a href="boxgame/">
+              Box Game
             </a>
           </h2>
-          
-          <p class="description">
-            Click the box as many times as you can
-            before the timer ends.
-            
-            <img src="boxgame/preview.png"
-            alt='A preview of the box game'></img>
+
+          <p>
+            Click the moving box as many times as you can before the timer expires.
           </p>
         </div>
         
-        
-        <div class="third center">
-          <h2>
-            <a href="music/index.html" class='name'>
-              ( Music )
+        <div class="mobile-12 tablet-4 pad-content">
+          <h2 class="title">
+            <a href="music/">
+              Music player
             </a>
           </h2>
-          
-          <p class="description">
-            A music player built in the browser,
-            which has since been
-            <a href="//rawgit.com/PsychoLlama/song.js/master/index.html">
-              rewritten</a>.
-            
-            <img src="music/preview.png"
-            alt='A preview of the music player'></img>
+
+          <p>
+            A music player built in the browser (which has since been
+            <a href="//github.com/PsychoLlama/Fandora">rewritten</a>).
           </p>
         </div>
         
-        
-        <div class="third center">
-          <h2>
-            <a href="google-homepage/index.html" class='args'>
-              ( Google )
+        <div class="mobile-12 tablet-4 pad-content">
+          <h2 class="title">
+            <a href="song-js/">
+              Song.js
             </a>
           </h2>
-          
-          <p class="description">
-            A recreation of the Google homepage
-            in HTML and CSS.
-            
-            <img src="google-homepage/preview.png"
-            alt='A preview of the google homepage recreation'></img>
+
+          <p>
+            An abstraction library for song management in the browser.
           </p>
         </div>
         
-        
-        <div class="third center">
-          <h2>
-            <a href="speech/index.html" class='element'>
-              ( Speech )
+        <div class="mobile-12 tablet-4 pad-content">
+          <h2 class="title">
+            <a href="google-homepage/">
+              Google homepage
             </a>
           </h2>
-          
-          <p class="description">
-            An experiment for speech recognition in the browser.
-            
-            <img src="speech/preview.png"
-            alt='A preview of the speech recognition experiment'></img>
+
+          <p>
+            The recreation of the Google homepage, a design project from The Odin Project.
           </p>
         </div>
         
-        
-        <div class="third center">
-          <h2>
-            <a href="song-js/index.html" class='string'>
-              ( Song.js )
+        <div class="mobile-12 tablet-4 pad-content">
+          <h2 class="title">
+            <a href="music/">
+              Speech recognition
             </a>
           </h2>
-          
-          <p class="description">
-            A playlist management library built for the browser.
-            
-            <img src="song-js/preview.png"
-            alt='A preview of the speech recognition experiment'></img>
+
+          <p>
+            A project that come from testing the browser's new speech recognition features.
           </p>
         </div>
-      </section>
+        
+        <div class="mobile-12 tablet-4 pad-content">
+          <h2 class="title">
+            <a href="//github.com/PsychoLlama/Boilercrate/">
+              Boilercrate
+            </a>
+          </h2>
+
+          <p>
+            A design framework created for this site, heavily influenced by bootstrap.
+          </p>
+        </div>
+        
+      </div><!--row-->
+
       
-      <footer class='gray center'>
-        Site owned and operated by
-        <a href="../about/index.html">Jesse Gibson</a>.<br>
-        Design inspired by
-        <a href="http://www.sublimetext.com/">
-          Sublime Text Editor</a>.
-      </footer>
-    </div>
+    </div><!-- Everything that isn't the sidebar -->
     
-    <!--TweenLite Animation-->
-    <script
-    src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
-    <script type="text/javascript" src="/index.js"></script>
+    <!--Sidebar-->
+    <aside class="sidebar mobile-show tablet-hide">
+      <ul>
+        <li>
+          <a class="pad-content ledge pad-content-vertical sidebar-item"
+             href="https://medium.com/@ReignOfLlama">
+            Blog
+          </a>
+        </li>
+        <li class="pad-content ledge pad-content-vertical sidebar-item active">
+            Bin
+        </li>
+        <li>
+          <a class="pad-content ledge pad-content-vertical sidebar-item" href="../portfolio/">
+            Portfolio
+          </a>
+        </li>
+      </ul>
+    </aside>
+    
+    <!--Sidebar reveal code-->
+    <script type="text/javascript" src="../script.js">
+    </script>
   </body>
 </html>
