@@ -1,4 +1,4 @@
 TechLlama
 =============
-A long overdue redesign of my website, TechLlama.com.<br>
-The design was inspired by Sublime Text Editor.
+The code that powers my website. The only resource used is font-awesome.
+Feel free to submit an issue or pull request!
