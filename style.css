@@ -46,6 +46,18 @@ footer {
   padding-left: 12.5px;
   padding-right: 12.5px; }
 
+.pad-content-top {
+  padding-top: 3%; }
+  @media screen and (max-width: 768px) {
+    .pad-content-top {
+      padding-top: 20px; } }
+
+.pad-content-bottom {
+  padding-bottom: 3%; }
+  @media screen and (max-width: 768px) {
+    .pad-content-bottom {
+      padding-bottom: 20px; } }
+
 .pull-right {
   float: right;
   overflow-y: hidden; }
@@ -651,7 +663,7 @@ h6 {
   background-color: #202428;
   border-left: 1px solid #15171a;
   min-height: 100%;
-  width: 50%;
+  width: 75%;
   position: fixed;
   top: 0;
   left: 100%; }
@@ -677,9 +689,9 @@ h6 {
   @media screen and (max-width: 768px) {
     .all-content.sidebar-reveal {
       position: relative;
-      left: -50%; }
+      left: -75%; }
       .all-content.sidebar-reveal ~ .sidebar {
-        left: 50%; } }
+        left: 25%; } }
 
 body {
   overflow-x: hidden; }
@@ -696,15 +708,5 @@ body {
 
 .background-white {
   background-color: #f0f0f0; }
-
-.background-image-right {
-  background: url("http://www.techllama.com/bin/boxgame/preview.png");
-  background-repeat: no-repeat;
-  background-position: right; }
-
-.background-image-left {
-  background: url("http://www.techllama.com/bin/music/preview.png");
-  background-repeat: no-repeat;
-  background-position: left; }
 
 /*# sourceMappingURL=style.css.map */
