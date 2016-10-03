@@ -1,4 +1,5 @@
-TechLlama
+The Llama Report
 =============
-The code that powers my website. The only resource used is font-awesome.
-Feel free to submit an issue or pull request!
+My personal website with non-personal things on there.
+
+Really it's just a collection of projects I'm bragging about.
