@@ -8,7 +8,8 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "lint": "eslint src"
   },
   "dependencies": {
     "gatsby": "^2.15.36",
@@ -16,6 +17,7 @@
     "react-dom": "^16.10.2"
   },
   "devDependencies": {
+    "eslint": "^6.5.1",
     "prettier": "^1.18.2"
   },
   "repository": {
