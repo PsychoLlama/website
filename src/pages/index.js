@@ -20,6 +20,7 @@ const Container = styled.section`
   color: ${props => props.theme.colors.text};
   font-family: Hack, monospace;
   font-size: 16px;
+  line-height: 1.4rem;
 `;
 
 const Content = styled.main`
@@ -38,18 +39,41 @@ const VimSidebar = styled.div.attrs({
   background-image: url("${sidebarTilde}");
   background-repeat: repeat-y;
   width: 1rem;
+
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
+`;
+
+const Hero = styled.article`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  text-align: center;
+  flex-direction: column;
+  font-size: 20px;
+  line-height: 2rem;
+`;
+
+const IntroductionLineItem = styled.p`
+  margin: 0;
+`;
+
+const MyName = styled(IntroductionLineItem)`
+  margin-bottom: 2rem;
 `;
 
 const Navigation = styled.nav`
   padding: 0.5rem;
-  color: ${props => props.theme.colors.blue};
+  color: ${props => props.theme.colors.green};
   display: flex;
 `;
 
 const Links = styled.ul`
   padding: 0;
   margin: 0;
-  list-style: number inside;
+  list-style-type: none;
   display: flex;
 `;
 
@@ -61,15 +85,20 @@ const NavItem = styled.li`
   }
 `;
 
-const Link = styled(NavItem)`
+const NavLink = styled.a`
   cursor: pointer;
+  border-bottom: 1px solid transparent;
+  color: inherit;
+  text-decoration: none;
 
-  :hover {
-    color: ${props => props.theme.colors.activeBlue};
+  :hover,
+  :focus {
+    color: ${props => props.theme.colors.text};
+    border-bottom-color: ${props => props.theme.colors.text};
   }
 `;
 
-const SiteName = styled(Link).attrs({ as: 'p' })`
+const SiteName = styled(NavItem).attrs({ as: 'p' })`
   margin: 0;
 
   ::before {
@@ -79,6 +108,21 @@ const SiteName = styled(Link).attrs({ as: 'p' })`
   ::after {
     content: ']';
   }
+
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
+`;
+
+const Highlight = styled.span`
+  color: ${props => props.theme.colors.blue};
+
+  ::before {
+    content: '<';
+  }
+  ::after {
+    content: '>';
+  }
 `;
 
 const oneDark = {
@@ -86,31 +130,58 @@ const oneDark = {
     background: '#282c34',
     text: '#abb2bf',
     blue: '#61afef',
-    activeBlue: '#abb2bf',
     red: '#e06c75',
+    green: '#98c379',
   },
 };
 
-const Site = () => (
-  <>
-    <ThemeProvider theme={oneDark}>
-      <GlobalStyle />
-      <Container>
-        <Content>
-          <VimSidebar />
-        </Content>
+const Site = () => {
+  const links = [
+    { name: 'Home', target: '/' },
+    { name: 'About Me', target: '/' },
+  ];
 
-        <Navigation>
-          <SiteName>PsychoLlama</SiteName>
+  return (
+    <>
+      <ThemeProvider theme={oneDark}>
+        <GlobalStyle />
+        <Container>
+          <Content>
+            <VimSidebar />
+            <Hero>
+              <MyName>Jesse Gibson</MyName>
+              <IntroductionLineItem>
+                Software Engineer at HireVue
+              </IntroductionLineItem>
+              <IntroductionLineItem>
+                <Highlight>PsychoLlama</Highlight> on GitHub
+              </IntroductionLineItem>
+              <IntroductionLineItem>
+                Free and Open-Source Software Enthusiast
+              </IntroductionLineItem>
+            </Hero>
+          </Content>
 
-          <Links>
-            <Link>Home</Link>
-            <Link>About Me</Link>
-          </Links>
-        </Navigation>
-      </Container>
-    </ThemeProvider>
-  </>
-);
+          <Navigation>
+            <SiteName>PsychoLlama</SiteName>
+
+            <Links>
+              {links.map((link, index) => (
+                <NavItem key={index}>
+                  <NavLink href={link.target}>
+                    <span aria-hidden role="presentation">
+                      {index + 1}:
+                    </span>
+                    {link.name}
+                  </NavLink>
+                </NavItem>
+              ))}
+            </Links>
+          </Navigation>
+        </Container>
+      </ThemeProvider>
+    </>
+  );
+};
 
 export default Site;
