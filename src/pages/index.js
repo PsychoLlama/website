@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import React from 'react';
 import sidebarTilde from '../assets/vim-gutter-symbol.svg';
+import Anchor from '../components/Anchor';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -114,14 +115,21 @@ const SiteName = styled(NavItem).attrs({ as: 'p' })`
   }
 `;
 
-const Highlight = styled.span`
+const TaggedLink = styled(Anchor)`
   color: ${(props) => props.theme.colors.blue};
+  text-decoration: none;
 
   ::before {
     content: '<';
   }
+
   ::after {
     content: '>';
+  }
+
+  :hover,
+  :focus {
+    text-decoration: underline;
   }
 `;
 
@@ -151,13 +159,13 @@ export default function Site() {
             <Hero>
               <MyName>Jesse Gibson</MyName>
               <IntroductionLineItem>
-                Software Engineer at HireVue
+                <TaggedLink href="https://github.com/PsychoLlama">
+                  PsychoLlama
+                </TaggedLink>{' '}
+                on GitHub
               </IntroductionLineItem>
               <IntroductionLineItem>
-                <Highlight>PsychoLlama</Highlight> on GitHub
-              </IntroductionLineItem>
-              <IntroductionLineItem>
-                Free and Open-Source Software Enthusiast
+                Software Engineer in Portland, Oregon
               </IntroductionLineItem>
             </Hero>
           </Content>
