@@ -60,7 +60,7 @@ const VimSidebar = styled.div.attrs({
   }
 `;
 
-const Hero = styled.article`
+const Hero = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
