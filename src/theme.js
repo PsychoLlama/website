@@ -1,12 +1,12 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import React from 'react';
 import Helmet from 'react-helmet';
+import './global.css';
 
 export default function Theme({ element }) {
   return (
     <ThemeProvider theme={oneDark}>
       <>
-        <GlobalStyleResets />
         <Helmet>
           <link
             rel="stylesheet"
@@ -31,14 +31,3 @@ const oneDark = {
     cyan: '#56b6c2',
   },
 };
-
-const GlobalStyleResets = createGlobalStyle`
-  html {
-    background-color: ${(props) => props.theme.colors.background};
-  }
-
-  body {
-    margin: 0;
-    font-family: Hack, monospace;
-  }
-`;

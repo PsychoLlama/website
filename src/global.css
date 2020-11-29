@@ -1,0 +1,14 @@
+html {
+  /**
+   * Color is intentionally duplicated with the theme context. Global styles
+   * don't work with SSR pages if you use the styled-components API, but CSS
+   * imports offer a good fallback. Unless IE 11 can die, theme variables
+   * aren't accessible inside CSS, forcing the duplication.
+   */
+  background-color: #282c34;
+}
+
+body {
+  margin: 0;
+  font-family: Hack, monospace;
+}
