@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import React from 'react';
-import sidebarTilde from './vim-sidebar-tilde.svg';
+import sidebarTilde from '../assets/vim-gutter-symbol.svg';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -135,7 +135,7 @@ const oneDark = {
   },
 };
 
-const Site = () => {
+export default function Site() {
   const links = [
     { name: 'Home', target: '/' },
     { name: 'About Me', target: '/' },
@@ -182,6 +182,4 @@ const Site = () => {
       </ThemeProvider>
     </>
   );
-};
-
-export default Site;
+}
