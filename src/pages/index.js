@@ -9,7 +9,6 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: space-between;
   color: ${(props) => props.theme.colors.text};
-  font-family: Hack, monospace;
   font-size: 16px;
   line-height: 1.4rem;
 `;
