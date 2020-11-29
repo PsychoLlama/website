@@ -1,17 +1,7 @@
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import React from 'react';
 import sidebarTilde from '../assets/vim-gutter-symbol.svg';
 import Anchor from '../components/Anchor';
-
-const GlobalStyle = createGlobalStyle`
-  html {
-    background-color: ${(props) => props.theme.colors.background};
-  }
-
-  body {
-    margin: 0;
-  }
-`;
 
 const Container = styled.section`
   min-height: 100vh;
@@ -133,16 +123,6 @@ const TaggedLink = styled(Anchor)`
   }
 `;
 
-const oneDark = {
-  colors: {
-    background: '#282c34',
-    text: '#abb2bf',
-    blue: '#61afef',
-    red: '#e06c75',
-    green: '#98c379',
-  },
-};
-
 export default function Site() {
   const links = [
     { name: 'Home', target: '/' },
@@ -151,43 +131,40 @@ export default function Site() {
 
   return (
     <>
-      <ThemeProvider theme={oneDark}>
-        <GlobalStyle />
-        <Container>
-          <Content>
-            <VimSidebar />
-            <Hero>
-              <MyName>Jesse Gibson</MyName>
-              <IntroductionLineItem>
-                <TaggedLink href="https://github.com/PsychoLlama">
-                  PsychoLlama
-                </TaggedLink>{' '}
-                on GitHub
-              </IntroductionLineItem>
-              <IntroductionLineItem>
-                Software Engineer in Portland, Oregon
-              </IntroductionLineItem>
-            </Hero>
-          </Content>
+      <Container>
+        <Content>
+          <VimSidebar />
+          <Hero>
+            <MyName>Jesse Gibson</MyName>
+            <IntroductionLineItem>
+              <TaggedLink href="https://github.com/PsychoLlama">
+                PsychoLlama
+              </TaggedLink>{' '}
+              on GitHub
+            </IntroductionLineItem>
+            <IntroductionLineItem>
+              Software Engineer in Portland, Oregon
+            </IntroductionLineItem>
+          </Hero>
+        </Content>
 
-          <Navigation>
-            <SiteName>PsychoLlama</SiteName>
+        <Navigation>
+          <SiteName>PsychoLlama</SiteName>
 
-            <Links>
-              {links.map((link, index) => (
-                <NavItem key={index}>
-                  <NavLink href={link.target}>
-                    <span aria-hidden role="presentation">
-                      {index + 1}:
-                    </span>
-                    {link.name}
-                  </NavLink>
-                </NavItem>
-              ))}
-            </Links>
-          </Navigation>
-        </Container>
-      </ThemeProvider>
+          <Links>
+            {links.map((link, index) => (
+              <NavItem key={index}>
+                <NavLink href={link.target}>
+                  <span aria-hidden role="presentation">
+                    {index + 1}:
+                  </span>
+                  {link.name}
+                </NavLink>
+              </NavItem>
+            ))}
+          </Links>
+        </Navigation>
+      </Container>
     </>
   );
 }
