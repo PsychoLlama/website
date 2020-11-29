@@ -39,6 +39,9 @@ const Navigation = styled.nav`
   padding: 0.5rem;
   color: ${(props) => props.theme.colors.green};
   display: flex;
+  position: sticky;
+  bottom: 0;
+  background-color: ${(props) => props.theme.colors.background};
 `;
 
 const Links = styled.ul`
