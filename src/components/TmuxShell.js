@@ -1,12 +1,40 @@
-import React from 'react';
+import React, { useEffect, useCallback, useRef } from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 export default function TmuxShell({ children, currentPage }) {
   const links = [
     { name: 'Home', target: '/' },
     { name: 'About', target: '/about/' },
   ];
+
+  const keystack = useRef([]);
+
+  const detectWindowNavigation = useCallback((event) => {
+    const keyChord = getKeyChord(event);
+    if (keyChord === 'ctrl+b') {
+      keystack.current = [];
+    }
+
+    keystack.current = keystack.current.slice(-1).concat(keyChord);
+    const prefix = keystack.current[0];
+    const targetWindow = isNaN(keystack.current[1])
+      ? Infinity
+      : Number(keystack.current[1]) - 1;
+
+    if (prefix === 'ctrl+b' && targetWindow < links.length) {
+      navigate(links[targetWindow].target);
+    }
+
+    return navigate;
+  }, []);
+
+  useEffect(() => {
+    document.body.addEventListener('keydown', detectWindowNavigation);
+    return () => {
+      document.body.removeEventListener('keydown', detectWindowNavigation);
+    };
+  }, []);
 
   return (
     <Container>
@@ -25,6 +53,17 @@ export default function TmuxShell({ children, currentPage }) {
     </Container>
   );
 }
+
+const getKeyChord = (event) => {
+  const sequence = [
+    event.ctrlKey && 'ctrl',
+    event.altKey && 'alt',
+    event.metaKey && 'cmd',
+    event.key,
+  ];
+
+  return sequence.filter(Boolean).join('+');
+};
 
 const Container = styled.div`
   min-height: 100vh;
