@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
+import Helmet from 'react-helmet';
 import sidebarTilde from '../assets/vim-gutter-symbol.svg';
 import Anchor from '../components/Anchor';
 
@@ -129,41 +130,43 @@ export default function Site() {
   ];
 
   return (
-    <>
-      <Container>
-        <Content>
-          <VimSidebar />
-          <Hero>
-            <MyName>Jesse Gibson</MyName>
-            <IntroductionLineItem>
-              <TaggedLink href="https://github.com/PsychoLlama">
-                PsychoLlama
-              </TaggedLink>{' '}
-              on GitHub
-            </IntroductionLineItem>
-            <IntroductionLineItem>
-              Software Engineer in Portland, Oregon
-            </IntroductionLineItem>
-          </Hero>
-        </Content>
+    <Container>
+      <Helmet>
+        <title>Jesse Gibson | PsychoLlama</title>
+      </Helmet>
 
-        <Navigation>
-          <SiteName>PsychoLlama</SiteName>
+      <Content>
+        <VimSidebar />
+        <Hero>
+          <MyName>Jesse Gibson</MyName>
+          <IntroductionLineItem>
+            <TaggedLink href="https://github.com/PsychoLlama">
+              PsychoLlama
+            </TaggedLink>{' '}
+            on GitHub
+          </IntroductionLineItem>
+          <IntroductionLineItem>
+            Software Engineer in Portland, Oregon
+          </IntroductionLineItem>
+        </Hero>
+      </Content>
 
-          <Links>
-            {links.map((link, index) => (
-              <NavItem key={index}>
-                <NavLink href={link.target}>
-                  <span aria-hidden role="presentation">
-                    {index + 1}:
-                  </span>
-                  {link.name}
-                </NavLink>
-              </NavItem>
-            ))}
-          </Links>
-        </Navigation>
-      </Container>
-    </>
+      <Navigation>
+        <SiteName>PsychoLlama</SiteName>
+
+        <Links>
+          {links.map((link, index) => (
+            <NavItem key={index}>
+              <NavLink href={link.target}>
+                <span aria-hidden role="presentation">
+                  {index + 1}:
+                </span>
+                {link.name}
+              </NavLink>
+            </NavItem>
+          ))}
+        </Links>
+      </Navigation>
+    </Container>
   );
 }
