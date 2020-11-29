@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "description": "Personal website",
   "author": "Jesse Gibson <JesseTheGibson@gmail.com>",
-  "license": "MIT",
+  "homepage": "https://psychollama.io",
+  "repository": "github:PsychoLlama/llama-drama",
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
@@ -23,9 +24,5 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "styled-components": "^5.2.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/PsychoLlama/llama-drama"
   }
 }
