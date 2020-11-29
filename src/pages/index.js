@@ -4,7 +4,7 @@ import sidebarTilde from './vim-sidebar-tilde.svg';
 
 const GlobalStyle = createGlobalStyle`
   html {
-    background-color: ${props => props.theme.colors.background};
+    background-color: ${(props) => props.theme.colors.background};
   }
 
   body {
@@ -17,7 +17,7 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.text};
   font-family: Hack, monospace;
   font-size: 16px;
   line-height: 1.4rem;
@@ -34,9 +34,9 @@ const VimSidebar = styled.div.attrs({
   'aria-hidden': true,
 })`
   display: flex;
-  color: ${props => props.theme.colors.blue};
+  color: ${(props) => props.theme.colors.blue};
   margin-right: 1rem;
-  background-image: url("${sidebarTilde}");
+  background-image: url('${sidebarTilde}');
   background-repeat: repeat-y;
   width: 1rem;
 
@@ -66,7 +66,7 @@ const MyName = styled(IntroductionLineItem)`
 
 const Navigation = styled.nav`
   padding: 0.5rem;
-  color: ${props => props.theme.colors.green};
+  color: ${(props) => props.theme.colors.green};
   display: flex;
 `;
 
@@ -93,8 +93,8 @@ const NavLink = styled.a`
 
   :hover,
   :focus {
-    color: ${props => props.theme.colors.text};
-    border-bottom-color: ${props => props.theme.colors.text};
+    color: ${(props) => props.theme.colors.text};
+    border-bottom-color: ${(props) => props.theme.colors.text};
   }
 `;
 
@@ -115,7 +115,7 @@ const SiteName = styled(NavItem).attrs({ as: 'p' })`
 `;
 
 const Highlight = styled.span`
-  color: ${props => props.theme.colors.blue};
+  color: ${(props) => props.theme.colors.blue};
 
   ::before {
     content: '<';
