@@ -5,6 +5,34 @@ import sidebarTilde from '../assets/vim-gutter-symbol.svg';
 import Anchor from '../components/Anchor';
 import TmuxShell from '../components/TmuxShell';
 
+export default function Site(props) {
+  return (
+    <TmuxShell currentPage={props.path}>
+      <Container>
+        <Helmet>
+          <title>Jesse Gibson | PsychoLlama</title>
+        </Helmet>
+
+        <Content>
+          <VimSidebar />
+          <Hero>
+            <MyName>Jesse Gibson</MyName>
+            <IntroductionLineItem>
+              <TaggedLink href="https://github.com/PsychoLlama">
+                PsychoLlama
+              </TaggedLink>{' '}
+              on GitHub
+            </IntroductionLineItem>
+            <IntroductionLineItem>
+              Software Engineer in Portland, Oregon
+            </IntroductionLineItem>
+          </Hero>
+        </Content>
+      </Container>
+    </TmuxShell>
+  );
+}
+
 const Container = styled.main`
   flex-grow: 1;
   display: flex;
@@ -68,31 +96,3 @@ const TaggedLink = styled(Anchor)`
     text-decoration: underline;
   }
 `;
-
-export default function Site(props) {
-  return (
-    <TmuxShell currentPage={props.path}>
-      <Container>
-        <Helmet>
-          <title>Jesse Gibson | PsychoLlama</title>
-        </Helmet>
-
-        <Content>
-          <VimSidebar />
-          <Hero>
-            <MyName>Jesse Gibson</MyName>
-            <IntroductionLineItem>
-              <TaggedLink href="https://github.com/PsychoLlama">
-                PsychoLlama
-              </TaggedLink>{' '}
-              on GitHub
-            </IntroductionLineItem>
-            <IntroductionLineItem>
-              Software Engineer in Portland, Oregon
-            </IntroductionLineItem>
-          </Hero>
-        </Content>
-      </Container>
-    </TmuxShell>
-  );
-}
