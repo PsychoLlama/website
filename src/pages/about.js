@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import TmuxShell from '../components/TmuxShell';
 import Anchor from '../components/Anchor';
 
-export default function AboutMe() {
+export default function AboutMe(props) {
   return (
-    <TmuxShell>
+    <TmuxShell currentPage={props.path}>
       <ManPage>
         <Header>
           <PageTitle>Man Page</PageTitle>

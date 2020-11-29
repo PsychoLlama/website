@@ -69,9 +69,9 @@ const TaggedLink = styled(Anchor)`
   }
 `;
 
-export default function Site() {
+export default function Site(props) {
   return (
-    <TmuxShell>
+    <TmuxShell currentPage={props.path}>
       <Container>
         <Helmet>
           <title>Jesse Gibson | PsychoLlama</title>

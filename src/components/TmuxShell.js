@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-export default function TmuxShell({ children }) {
+export default function TmuxShell({ children, currentPage }) {
   const links = [
     { name: 'Home', target: '/' },
-    { name: 'About', target: '/about' },
+    { name: 'About', target: '/about/' },
   ];
 
   return (
@@ -16,13 +16,8 @@ export default function TmuxShell({ children }) {
 
         <Links>
           {links.map((link, index) => (
-            <NavItem key={index}>
-              <NavLink to={link.target}>
-                <span aria-hidden role="presentation">
-                  {index + 1}:
-                </span>
-                {link.name}
-              </NavLink>
+            <NavItem key={index} data-active={currentPage === link.target}>
+              <NavLink to={link.target}>{link.name}</NavLink>
             </NavItem>
           ))}
         </Links>
@@ -51,13 +46,27 @@ const Links = styled.ul`
   margin: 0;
   list-style-type: none;
   display: flex;
+  counter-set: nav-link 0;
 `;
 
 const NavItem = styled.li`
-  margin: 0 0.5rem;
+  margin: 0 1ch;
 
   ::first-child {
     margin-left: 0;
+  }
+
+  ::before {
+    content: counter(nav-link) ':';
+    counter-increment: nav-link;
+  }
+
+  &[data-active='true'] {
+    margin-right: 0;
+
+    ::after {
+      content: '*';
+    }
   }
 `;
 
