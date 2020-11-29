@@ -12,17 +12,17 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.15.36",
-    "gatsby-plugin-styled-components": "^3.1.11",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "styled-components": "^4.4.1"
+    "babel-plugin-styled-components": "^1.12.0",
+    "gatsby": "^2.27.4",
+    "gatsby-plugin-styled-components": "^3.5.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "eslint": "^6.5.1",
-    "eslint-plugin-react": "^7.16.0",
-    "prettier": "^1.18.2"
+    "eslint": "^7.14.0",
+    "eslint-plugin-react": "^7.21.5",
+    "prettier": "^2.2.1"
   },
   "repository": {
     "type": "git",
