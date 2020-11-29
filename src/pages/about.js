@@ -25,6 +25,7 @@ export default function AboutMe() {
         <Subheading>Contact</Subheading>
         <Paragraph>
           I have no social media presence aside from FOSS networks and GitHub.
+          Perhaps it&apos;s extreme, but I heartily recommend it.
         </Paragraph>
 
         <FlagList>
@@ -46,19 +47,38 @@ export default function AboutMe() {
             <Hyperlink href="https://matrix.to/#/@psychollama271:matrix.org">
               @psychollama271:matrix.org
             </Hyperlink>{' '}
-            on Matrix. Feel free to say hello any time. I enjoy meeting new
-            people.
+            on Matrix. Feel free to say hello any time. It&apos;s always
+            enjoyable to meet new people.
           </FlagValue>
 
           <FlagName>source-control</FlagName>
           <FlagValue>
-            All my public work is done on GitHub under the username{' '}
+            All my public work is done under the username{' '}
             <Hyperlink href="https://github.com/PsychoLlama">
               @PsychoLlama
-            </Hyperlink>
-            .
+            </Hyperlink>{' '}
+            on GitHub.
           </FlagValue>
         </FlagList>
+
+        <Subheading>Interests</Subheading>
+        <Paragraph>
+          CRDTs, Peer-to-Peer systems, terminals, CLI tools (see{' '}
+          <Hyperlink
+            target="_blank"
+            href="https://github.com/PsychoLlama/recommendations#terminal-tools"
+          >
+            recommendations
+          </Hyperlink>
+          ), and writing the occasional Vim plugin. Sometimes Stockholm Syndrome
+          from a career in JavaScript drives inexplicable curiosity in web
+          development too.
+        </Paragraph>
+
+        <Paragraph>
+          When I&apos;m not writing software, I enjoy science fiction, exploring
+          big cities, playing guitar, and thinking about writing more software.
+        </Paragraph>
       </ManPage>
     </TmuxShell>
   );
@@ -111,6 +131,10 @@ const Paragraph = styled.p`
   color: ${(props) => props.theme.colors.text};
   margin: 0;
   margin-left: 4rem;
+
+  & + & {
+    margin-top: 1rem;
+  }
 
   @media screen and (max-width: 640px) {
     margin-left: 2rem;
