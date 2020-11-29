@@ -13,7 +13,7 @@ export default function AboutMe(props) {
 
       <ManPage>
         <Header>
-          <PageTitle>Man Page</PageTitle>
+          <PageTitle>Manly Page</PageTitle>
         </Header>
 
         <Subheading>Synopsis</Subheading>
@@ -27,33 +27,43 @@ export default function AboutMe(props) {
           learn new things.
         </Paragraph>
 
-        <Subheading>Contact</Subheading>
+        <Subheading>Social</Subheading>
         <Paragraph>
-          I have no social media presence aside from FOSS networks and GitHub.
-          Perhaps it&apos;s extreme, but I heartily recommend it.
+          Whenever the tradeoffs are reasonable, I prefer to use Free and Open
+          Source Software instead of major technology products. These choices
+          are reflected by my on-line presence. You won&apos;t find me on
+          Twitter or Facebook.
         </Paragraph>
 
         <FlagList>
           <FlagName>microblog</FlagName>
           <FlagValue>
-            My handle is{' '}
+            ActivityPub platforms are a spark of wonder in a dark world, and
+            Mastodon is their leader. I post under the handle{' '}
             <Hyperlink
               target="_blank"
               href="https://fosstodon.org/@PsychoLlama"
             >
               @PsychoLlama@fosstodon.org
+            </Hyperlink>{' '}
+            (see also:{' '}
+            <Hyperlink
+              target="_blank"
+              href="https://pixelfed.social/PsychoLlama"
+            >
+              Pixelfed
             </Hyperlink>
-            , which points to a node in the Mastodon federated social network.
+            ).
           </FlagValue>
 
           <FlagName>chat</FlagName>
           <FlagValue>
-            I&apos;m{' '}
+            Matrix is an open standard for encrypted chat. My address is{' '}
             <Hyperlink href="https://matrix.to/#/@psychollama271:matrix.org">
               @psychollama271:matrix.org
-            </Hyperlink>{' '}
-            on Matrix. Feel free to say hello any time. It&apos;s always
-            enjoyable to meet new people.
+            </Hyperlink>
+            . Remember, the faster we adopt Matrix, the faster XMPP can be put
+            to rest. In hell.
           </FlagValue>
 
           <FlagName>source-control</FlagName>
@@ -62,9 +72,17 @@ export default function AboutMe(props) {
             <Hyperlink href="https://github.com/PsychoLlama">
               @PsychoLlama
             </Hyperlink>{' '}
-            on GitHub.
+            on GitHub&hellip; for now. Eagerly awaiting federation support for
+            self-hosted alternatives.
           </FlagValue>
         </FlagList>
+
+        <Paragraph>
+          If you haven&apos;t used Mastodon, I highly recommend it. Very few
+          open source projects actually benefit from more users, but social
+          media platforms are the perfect exception. It&apos;s the easiest way
+          to contribute to something bigger.
+        </Paragraph>
 
         <Subheading>Interests</Subheading>
         <Paragraph>
@@ -76,13 +94,14 @@ export default function AboutMe(props) {
             recommendations
           </Hyperlink>
           ), and writing the occasional Vim plugin. Sometimes Stockholm Syndrome
-          from a career in JavaScript drives inexplicable curiosity in web
-          development too.
+          from a career in JavaScript drives interest in web development too.
+          It&apos;s a bad habit, I&apos;m trying to quit.
         </Paragraph>
 
         <Paragraph>
           When I&apos;m not writing software, I enjoy science fiction, exploring
-          big cities, playing guitar, and thinking about writing more software.
+          big cities, COD, playing guitar, and thinking about writing more
+          software.
         </Paragraph>
       </ManPage>
     </TmuxShell>
@@ -129,13 +148,17 @@ const Subheading = styled.h2`
   font-weight: normal;
   text-transform: uppercase;
   margin: 0;
-  margin-top: 2rem;
+
+  :first-of-type {
+    margin-top: 2rem;
+  }
 `;
 
 const Paragraph = styled.p`
   color: ${(props) => props.theme.colors.text};
   margin: 0;
   margin-left: 4rem;
+  margin-bottom: 2rem;
 
   & + & {
     margin-top: 1rem;
@@ -147,9 +170,8 @@ const Paragraph = styled.p`
 `;
 
 const FlagList = styled.dl`
-  margin: 0;
-  margin-top: 2rem;
-  margin-left: 4rem;
+  margin: 2rem 4rem;
+  margin-right: 0;
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-column-gap: 4rem;

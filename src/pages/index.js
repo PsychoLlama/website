@@ -10,7 +10,7 @@ export default function Site(props) {
     <TmuxShell currentPage={props.path}>
       <Container>
         <Helmet>
-          <title>Jesse Gibson | PsychoLlama</title>
+          <title>Home | PsychoLlama</title>
         </Helmet>
 
         <Content>
