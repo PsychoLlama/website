@@ -1,0 +1,28 @@
+{
+  "name": "@psychollama/website",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Personal website",
+  "author": "Jesse Gibson <JesseTheGibson@gmail.com>",
+  "homepage": "https://psychollama.io",
+  "repository": "github:PsychoLlama/llama-drama",
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "lint": "eslint src --color"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.12.0",
+    "eslint": "^7.14.0",
+    "eslint-plugin-react": "^7.21.5",
+    "gatsby": "^2.27.4",
+    "gatsby-plugin-react-helmet": "^3.5.0",
+    "gatsby-plugin-styled-components": "^3.5.0",
+    "prettier": "^2.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.2.1"
+  }
+}

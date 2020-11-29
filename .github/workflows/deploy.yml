@@ -1,0 +1,29 @@
+name: GH Deploy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  publish_website:
+    runs-on: ubuntu-latest
+    name: Publish
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        name: Install node
+        with:
+          node-version: 14
+      - name: Install packages
+        uses: bahmutov/npm-install@v1
+      - name: Build production bundle
+        run: yarn build
+      - name: Deploy to GitHub Pages
+        if: ${{ success() }}
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: public
+          fqdn: psychollama.io
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

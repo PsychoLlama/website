@@ -1,0 +1,22 @@
+parserOptions:
+  sourceType: module
+  ecmaFeatures:
+    jsx: true
+
+settings:
+  react:
+    version: detect
+
+env:
+  es6: true
+  browser: true
+
+plugins:
+  - eslint-plugin-react
+
+extends:
+- eslint:recommended
+- plugin:react/recommended
+
+rules:
+  react/prop-types: off
