@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import Helmet from 'react-helmet';
 import TmuxShell from '../components/TmuxShell';
 import Anchor from '../components/Anchor';
 
 export default function AboutMe(props) {
   return (
     <TmuxShell currentPage={props.path}>
+      <Helmet>
+        <title>About | PsychoLlama</title>
+      </Helmet>
+
       <ManPage>
         <Header>
           <PageTitle>Man Page</PageTitle>
