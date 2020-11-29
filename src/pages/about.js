@@ -127,7 +127,7 @@ const PageTitle = styled.h1`
 
   ::before,
   ::after {
-    content: 'about(6)';
+    content: 'about(7)';
     display: block;
   }
 
