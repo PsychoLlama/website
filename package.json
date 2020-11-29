@@ -9,7 +9,7 @@
     "build": "gatsby build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "lint": "eslint src"
+    "lint": "eslint src --color"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",

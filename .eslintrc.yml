@@ -3,6 +3,10 @@ parserOptions:
   ecmaFeatures:
     jsx: true
 
+settings:
+  react:
+    version: detect
+
 env:
   es6: true
   browser: true
