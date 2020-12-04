@@ -41,6 +41,7 @@ export default function AboutMe(props) {
             ActivityPub platforms are a spark of wonder in a dark world, and
             Mastodon is their leader. I post under the handle{' '}
             <Hyperlink
+              rel="me"
               target="_blank"
               href="https://fosstodon.org/@PsychoLlama"
             >
