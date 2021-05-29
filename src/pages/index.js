@@ -1,98 +1,103 @@
-import styled from 'styled-components';
 import React from 'react';
 import Helmet from 'react-helmet';
-import sidebarTilde from '../assets/vim-gutter-symbol.svg';
-import Anchor from '../components/Anchor';
 import TmuxShell from '../components/TmuxShell';
+import Anchor from '../components/Anchor';
+import ManPage from '../components/ManPage';
 
-export default function Site(props) {
+export default function AboutMe(props) {
   return (
     <TmuxShell currentPage={props.path}>
-      <Container>
-        <Helmet>
-          <title>Home | PsychoLlama</title>
-        </Helmet>
+      <Helmet>
+        <title>About | PsychoLlama</title>
+      </Helmet>
 
-        <Content>
-          <VimSidebar />
-          <Hero>
-            <MyName>Jesse Gibson</MyName>
-            <IntroductionLineItem>
-              <TaggedLink href="https://github.com/PsychoLlama">
-                PsychoLlama
-              </TaggedLink>{' '}
-              on GitHub
-            </IntroductionLineItem>
-            <IntroductionLineItem>
-              Software Engineer in Portland, Oregon
-            </IntroductionLineItem>
-          </Hero>
-        </Content>
-      </Container>
+      <ManPage section="about(7)">
+        <h1>Manly Page</h1>
+
+        <h2>Synopsis</h2>
+        <p>
+          <strong>Jesse Gibson</strong> - American computer programmer.
+        </p>
+
+        <h2>Company</h2>
+        <p>
+          None. Currently on sabbatical, taking time to finish side projects and
+          learn new things.
+        </p>
+
+        <h2>Social</h2>
+        <p>
+          Whenever the tradeoffs are reasonable, I prefer to use Free and Open
+          Source Software instead of major technology products. These choices
+          are reflected by my on-line presence. You won&apos;t find me on
+          Twitter or Facebook.
+        </p>
+
+        <dl>
+          <dt>microblog</dt>
+          <dd>
+            ActivityPub platforms are a spark of wonder in a dark world, and
+            Mastodon is their leader. I post under the handle{' '}
+            <Anchor
+              rel="me"
+              target="_blank"
+              href="https://fosstodon.org/@PsychoLlama"
+            >
+              @PsychoLlama@fosstodon.org
+            </Anchor>{' '}
+            (see also:{' '}
+            <Anchor target="_blank" href="https://pixelfed.social/PsychoLlama">
+              Pixelfed
+            </Anchor>
+            ).
+          </dd>
+
+          <dt>chat</dt>
+          <dd>
+            Matrix is an open standard for encrypted chat. My address is{' '}
+            <Anchor href="https://matrix.to/#/@psychollama271:matrix.org">
+              @psychollama271:matrix.org
+            </Anchor>
+            . Remember, the faster we adopt Matrix, the faster XMPP can be put
+            to rest. In hell.
+          </dd>
+
+          <dt>source-control</dt>
+          <dd>
+            All my public work is done under the username{' '}
+            <Anchor href="https://github.com/PsychoLlama">@PsychoLlama</Anchor>{' '}
+            on GitHub&hellip; for now. Eagerly awaiting federation support for
+            self-hosted alternatives.
+          </dd>
+        </dl>
+
+        <p>
+          If you haven&apos;t used Mastodon, I highly recommend it. Very few
+          open source projects actually benefit from more users, but social
+          media platforms are the perfect exception. It&apos;s the easiest way
+          to contribute to something bigger.
+        </p>
+
+        <h2>Interests</h2>
+        <p>
+          CRDTs, Peer-to-Peer systems, terminals, CLI tools (see{' '}
+          <Anchor
+            target="_blank"
+            href="https://github.com/PsychoLlama/recommendations#terminal-tools"
+          >
+            recommendations
+          </Anchor>
+          ), and writing the occasional Vim plugin. Sometimes Stockholm Syndrome
+          from a career in JavaScript drives interest in web development too.
+          It&apos;s a bad habit, I&apos;m trying to quit.
+        </p>
+
+        <p>
+          When I&apos;m not writing software, I enjoy science fiction, exploring
+          big cities, COD, playing guitar, and thinking about writing more
+          software.
+        </p>
+      </ManPage>
     </TmuxShell>
   );
 }
-
-const Container = styled.main`
-  flex-grow: 1;
-  display: flex;
-`;
-
-const Content = styled.section`
-  padding: 0.5rem;
-  display: flex;
-  flex-grow: 1;
-`;
-
-const VimSidebar = styled.div.attrs({
-  role: 'presentation',
-  'aria-hidden': true,
-})`
-  display: flex;
-  color: ${(props) => props.theme.colors.blue};
-  margin-right: 1rem;
-  background-image: url('${sidebarTilde}');
-  background-repeat: repeat-y;
-  width: 1rem;
-
-  @media screen and (max-width: 640px) {
-    display: none;
-  }
-`;
-
-const Hero = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  text-align: center;
-  flex-direction: column;
-  font-size: 20px;
-  line-height: 2rem;
-`;
-
-const IntroductionLineItem = styled.p`
-  margin: 0;
-`;
-
-const MyName = styled(IntroductionLineItem)`
-  margin-bottom: 2rem;
-`;
-
-const TaggedLink = styled(Anchor)`
-  color: ${(props) => props.theme.colors.blue};
-  text-decoration: none;
-
-  ::before {
-    content: '<';
-  }
-
-  ::after {
-    content: '>';
-  }
-
-  :hover,
-  :focus {
-    text-decoration: underline;
-  }
-`;

@@ -4,8 +4,7 @@ import { Link, navigate } from 'gatsby';
 
 export default function TmuxShell({ children, currentPage }) {
   const links = [
-    { name: 'Home', target: '/' },
-    { name: 'About', target: '/about/' },
+    { name: 'About', target: '/' },
     { name: 'Recommendations', target: '/recommendations/' },
   ];
 
