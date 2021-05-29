@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { Link } from 'gatsby';
 import TmuxShell from '../components/TmuxShell';
 import Anchor from '../components/Anchor';
 import ManPage from '../components/ManPage';
@@ -12,7 +13,7 @@ export default function AboutMe(props) {
       </Helmet>
 
       <ManPage section="about(7)">
-        <h1>Manly Page</h1>
+        <h1>About Me</h1>
 
         <h2>Synopsis</h2>
         <p>
@@ -81,12 +82,7 @@ export default function AboutMe(props) {
         <h2>Interests</h2>
         <p>
           CRDTs, Peer-to-Peer systems, terminals, CLI tools (see{' '}
-          <Anchor
-            target="_blank"
-            href="https://github.com/PsychoLlama/recommendations#terminal-tools"
-          >
-            recommendations
-          </Anchor>
+          <Link to="/recommendations">recommendations</Link>
           ), and writing the occasional Vim plugin. Sometimes Stockholm Syndrome
           from a career in JavaScript drives interest in web development too.
           It&apos;s a bad habit, I&apos;m trying to quit.
