@@ -1,4 +1,3 @@
-Llama Drama
-===========
+# Personal Website
 
-My personal website with non-personal things on there.
+It's like a business card: Nobody wants yours, but they all want their own. I'm part of the problem.
