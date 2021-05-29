@@ -16,10 +16,3 @@ exports.sourceNodes = async ({ actions, getCache, createNodeId }) => {
     name: 'recommendations',
   });
 };
-
-exports.createPages = ({ actions }) => {
-  actions.createPage({
-    path: '/recommendations',
-    component: require.resolve('./src/templates/markdown'),
-  });
-};

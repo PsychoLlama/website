@@ -6,6 +6,7 @@ export default function TmuxShell({ children, currentPage }) {
   const links = [
     { name: 'Home', target: '/' },
     { name: 'About', target: '/about/' },
+    { name: 'Recommendations', target: '/recommendations/' },
   ];
 
   const keystack = useRef([]);
