@@ -12,7 +12,10 @@ export default function TmuxShell({ children, currentPage }) {
 
   const detectWindowNavigation = useCallback((event) => {
     const keyChord = getKeyChord(event);
+
     if (keyChord === 'ctrl+b') {
+      event.preventDefault();
+      event.stopPropagation();
       keystack.current = [];
     }
 
