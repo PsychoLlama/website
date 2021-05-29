@@ -5,7 +5,7 @@
   "description": "Personal website",
   "author": "Jesse Gibson <JesseTheGibson@gmail.com>",
   "homepage": "https://psychollama.io",
-  "repository": "github:PsychoLlama/llama-drama",
+  "repository": "github:PsychoLlama/website",
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
