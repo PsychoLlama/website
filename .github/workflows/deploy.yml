@@ -1,8 +1,9 @@
-name: GH Deploy
+name: Deploy to GH Pages
 
 on:
+  workflow_dispatch:
   push:
-    branches: [master]
+    branches: master
 
 jobs:
   publish_website:
