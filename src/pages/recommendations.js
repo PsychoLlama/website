@@ -8,7 +8,7 @@ export default function Recommendations(props) {
   const [{ html }] = props.data.file.children.filter((child) => child.html);
 
   return (
-    <TmuxShell currentPage={props.path}>
+    <TmuxShell currentPage="/recommendations/">
       <Helmet>
         <title>Recommendations | PsychoLlama</title>
       </Helmet>

@@ -5,9 +5,9 @@ import TmuxShell from '../components/TmuxShell';
 import Anchor from '../components/Anchor';
 import ManPage from '../components/ManPage';
 
-export default function AboutMe(props) {
+export default function AboutMe() {
   return (
-    <TmuxShell currentPage={props.path}>
+    <TmuxShell currentPage="/">
       <Helmet>
         <title>About | PsychoLlama</title>
       </Helmet>
