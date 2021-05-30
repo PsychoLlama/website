@@ -15,7 +15,7 @@ const ManPage = styled.main`
     justify-content: space-between;
     flex-grow: 1;
     color: ${(props) => props.theme.colors.green};
-    padding-bottom: 1rem;
+    padding-bottom: ${(props) => (props.synopsis ? '2rem' : '1rem')};
 
     ::before,
     ::after {
