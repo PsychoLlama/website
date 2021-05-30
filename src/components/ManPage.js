@@ -64,6 +64,11 @@ const ManPage = styled.main`
 
   a {
     color: ${(props) => props.theme.colors.yellow};
+    text-decoration: none;
+
+    :hover {
+      text-decoration: underline;
+    }
   }
 
   dl {
@@ -128,6 +133,13 @@ const ManPage = styled.main`
   hr {
     margin: 2rem 4rem;
     border: 1px dashed ${(props) => props.theme.colors.text};
+  }
+
+  code {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: ${(props) => props.theme.colors.blue};
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.2rem;
   }
 `;
 
