@@ -23,7 +23,7 @@ export default function Theme({ element }) {
 
 const oneDark = {
   colors: {
-    background: '#282c34',
+    background: '#1e1e1e',
     text: '#abb2bf',
     blue: '#61afef',
     red: '#e06c75',

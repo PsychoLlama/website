@@ -5,7 +5,7 @@ html {
    * imports offer a good fallback. Unless IE 11 can die, theme variables
    * aren't accessible inside CSS, forcing the duplication.
    */
-  background-color: #282c34;
+  background-color: #1e1e1e;
 }
 
 body {
