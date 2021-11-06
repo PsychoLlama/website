@@ -3,8 +3,6 @@ parserOptions:
   ecmaFeatures:
     jsx: true
 
-parser: babel-eslint
-
 settings:
   react:
     version: detect
