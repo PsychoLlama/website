@@ -85,7 +85,6 @@ export default function AboutMe() {
           <Link to="/recommendations">recommendations</Link>
           ), and writing the occasional Vim plugin. Sometimes Stockholm Syndrome
           from a career in JavaScript drives interest in web development too.
-          It&apos;s a bad habit, I&apos;m trying to quit.
         </p>
 
         <p>
