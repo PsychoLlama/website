@@ -22,8 +22,8 @@ export default function AboutMe() {
 
         <h2>Company</h2>
         <p>
-          None. Currently on sabbatical, taking time to finish side projects and
-          learn new things.
+          I am on the <Anchor href="https://www.coscreen.co/">CoScreen</Anchor>{' '}
+          team at <Anchor href="https://www.datadoghq.com/">Datadog</Anchor>.
         </p>
 
         <h2>Social</h2>
