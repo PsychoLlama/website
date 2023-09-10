@@ -10,15 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Publish
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        name: Install node
-        with:
-          node-version: 14
-      - name: Install packages
-        uses: bahmutov/npm-install@v1
-      - name: Build production bundle
-        run: yarn build
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v23
+      - run: nix develop --command yarn install
+      - run: nix develop --command yarn build
       - name: Deploy to GitHub Pages
         if: ${{ success() }}
         uses: crazy-max/ghaction-github-pages@v2

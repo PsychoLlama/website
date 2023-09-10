@@ -9,12 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Lint
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        name: Install Node
-        with:
-          node-version: 14
-      - name: install Packages
-        uses: bahmutov/npm-install@v1
-      - name: Lint Files
-        run: yarn lint
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v23
+      - run: nix develop --command yarn install
+      - run: nix develop --command yarn lint
