@@ -2,7 +2,7 @@ import React, { useEffect, useCallback, useRef } from 'react';
 import styled from 'styled-components';
 import { Link, navigate } from 'gatsby';
 
-export default function TmuxShell({ children, currentPage }) {
+export default function TmuxShell({ children, currentPage, revision }) {
   const links = [
     { name: 'About', target: '/' },
     { name: 'Recommendations', target: '/recommendations/' },
@@ -43,7 +43,15 @@ export default function TmuxShell({ children, currentPage }) {
     <Container>
       {children}
       <Navigation>
-        <SiteName>PsychoLlama</SiteName>
+        <Revision>
+          <GitHubLink
+            to="https://github.com/PsychoLlama/website"
+            title="View source on GitHub"
+            target="_blank"
+          >
+            {revision}
+          </GitHubLink>
+        </Revision>
 
         <Links>
           {links.map((link, index) => (
@@ -115,7 +123,7 @@ const NavItem = styled.li`
   }
 `;
 
-const SiteName = styled(NavItem).attrs({ as: 'p' })`
+const Revision = styled(NavItem).attrs({ as: 'p' })`
   margin: 0;
 
   &::before {
@@ -132,6 +140,19 @@ const SiteName = styled(NavItem).attrs({ as: 'p' })`
 `;
 
 const NavLink = styled(Link)`
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: ${(props) => props.theme.colors.text};
+    border-bottom-color: ${(props) => props.theme.colors.text};
+  }
+`;
+
+const GitHubLink = styled(Link)`
   cursor: pointer;
   border-bottom: 1px solid transparent;
   color: inherit;

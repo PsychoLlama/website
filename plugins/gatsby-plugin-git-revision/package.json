@@ -1,0 +1,9 @@
+{
+  "name": "gatsby-plugin-git-revision",
+  "version": "0.0.0",
+  "description": "Pull the current git revision",
+  "main": "index.js",
+  "author": "Jesse Gibson",
+  "license": "MIT",
+  "private": true
+}

@@ -6,9 +6,10 @@ import ManPage from '../components/ManPage';
 
 export default function Recommendations(props) {
   const [{ html }] = props.data.file.children.filter((child) => child.html);
+  const { revision } = props.data.git;
 
   return (
-    <TmuxShell currentPage="/recommendations/">
+    <TmuxShell currentPage="/recommendations/" revision={revision}>
       <Helmet>
         <title>Recommendations | PsychoLlama</title>
       </Helmet>
@@ -24,6 +25,10 @@ export default function Recommendations(props) {
 
 export const query = graphql`
   query RecommendationsMarkdown {
+    git {
+      revision
+    }
+
     file(name: { eq: "recommendations" }) {
       children {
         ... on MarkdownRemark {

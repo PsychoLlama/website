@@ -3,6 +3,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-git-revision',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

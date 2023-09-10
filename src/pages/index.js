@@ -1,13 +1,13 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import TmuxShell from '../components/TmuxShell';
 import Anchor from '../components/Anchor';
 import ManPage from '../components/ManPage';
 
-export default function AboutMe() {
+export default function AboutMe(props) {
   return (
-    <TmuxShell currentPage="/">
+    <TmuxShell currentPage="/" revision={props.data.git.revision}>
       <Helmet>
         <title>About | PsychoLlama</title>
       </Helmet>
@@ -96,3 +96,11 @@ export default function AboutMe() {
     </TmuxShell>
   );
 }
+
+export const query = graphql`
+  query RecommendationsMarkdown {
+    git {
+      revision
+    }
+  }
+`;
