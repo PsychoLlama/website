@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
 import TmuxShell from '../components/TmuxShell';
 
-export default function BlameMongoDb() {
+export default function BlameMongoDb(props) {
   return (
-    <TmuxShell>
+    <TmuxShell revision={props.data.git.revision}>
       <Container>
         <Headers>
           HTTP/1.1 <RedHighlight>404</RedHighlight>
@@ -36,4 +37,12 @@ const RedHighlight = styled.span`
 
 const Body = styled.p`
   white-space: pre;
+`;
+
+export const query = graphql`
+  query RecommendationsMarkdown {
+    git {
+      revision
+    }
+  }
 `;
