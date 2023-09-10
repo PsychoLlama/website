@@ -5,7 +5,7 @@ import TmuxShell from '../components/TmuxShell';
 
 export default function BlameMongoDb(props) {
   return (
-    <TmuxShell revision={props.data.git.revision}>
+    <TmuxShell revision={props.data?.git.revision}>
       <Container>
         <Headers>
           HTTP/1.1 <RedHighlight>404</RedHighlight>

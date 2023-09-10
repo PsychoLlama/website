@@ -49,7 +49,7 @@ export default function TmuxShell({ children, currentPage, revision }) {
             title="View source on GitHub"
             target="_blank"
           >
-            {revision}
+            {revision ?? 'HEAD'}
           </GitHubLink>
         </Revision>
 
