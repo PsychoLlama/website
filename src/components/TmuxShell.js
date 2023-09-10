@@ -97,11 +97,11 @@ const Links = styled.ul`
 const NavItem = styled.li`
   margin: 0 1ch;
 
-  ::first-child {
+  &::first-child {
     margin-left: 0;
   }
 
-  ::before {
+  &::before {
     content: counter(nav-link) ':';
     counter-increment: nav-link;
   }
@@ -109,7 +109,7 @@ const NavItem = styled.li`
   &[data-active='true'] {
     margin-right: 0;
 
-    ::after {
+    &::after {
       content: '*';
     }
   }
@@ -118,11 +118,11 @@ const NavItem = styled.li`
 const SiteName = styled(NavItem).attrs({ as: 'p' })`
   margin: 0;
 
-  ::before {
+  &::before {
     content: '[';
   }
 
-  ::after {
+  &::after {
     content: ']';
   }
 
@@ -137,8 +137,8 @@ const NavLink = styled(Link)`
   color: inherit;
   text-decoration: none;
 
-  :hover,
-  :focus {
+  &:hover,
+  &:focus {
     color: ${(props) => props.theme.colors.text};
     border-bottom-color: ${(props) => props.theme.colors.text};
   }

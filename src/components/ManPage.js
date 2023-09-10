@@ -17,8 +17,8 @@ const ManPage = styled.main`
     color: ${(props) => props.theme.colors.green};
     padding-bottom: ${(props) => (props.synopsis ? '2rem' : '1rem')};
 
-    ::before,
-    ::after {
+    &::before,
+    &::after {
       content: '${(props) => props.section}';
       display: block;
     }
@@ -28,8 +28,8 @@ const ManPage = styled.main`
     font-weight: normal;
 
     @media screen and (max-width: 640px) {
-      ::before,
-      ::after {
+      &::before,
+      &::after {
         display: none;
       }
     }
@@ -42,7 +42,7 @@ const ManPage = styled.main`
     text-transform: uppercase;
     margin: 0;
 
-    :first-of-type {
+    &:first-of-type {
       margin-top: 2rem;
     }
   }
@@ -66,7 +66,7 @@ const ManPage = styled.main`
     color: ${(props) => props.theme.colors.yellow};
     text-decoration: none;
 
-    :hover {
+    &:hover {
       text-decoration: underline;
     }
   }
@@ -88,7 +88,7 @@ const ManPage = styled.main`
   dt {
     color: ${(props) => props.theme.colors.cyan};
 
-    ::before {
+    &::before {
       content: '--';
     }
   }
