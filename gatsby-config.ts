@@ -4,6 +4,7 @@ const config: GatsbyConfig = {
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-git-revision',
+    'gatsby-plugin-vanilla-extract',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

@@ -1,22 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
 import { PageProps, graphql } from 'gatsby';
 import TmuxShell from '../components/TmuxShell';
+import * as styles from './_404.css';
 
 export default function BlameMongoDb(props: PageProps<DataProps>) {
   return (
     <TmuxShell revision={props.data?.git.revision}>
-      <Container>
-        <Headers>
-          HTTP/1.1 <RedHighlight>404</RedHighlight>
+      <div className={styles.container}>
+        <p className={styles.headers}>
+          HTTP/1.1 <span className={styles.redHighlight}>404</span>
           <br />
           Server: bash/2.03 (Unix)
           <br />
           Content-Type: text/plain; charset=ascii
-        </Headers>
+        </p>
 
-        <Body>cat: no such file or directory.</Body>
-      </Container>
+        <p className={styles.body}>cat: no such file or directory.</p>
+      </div>
     </TmuxShell>
   );
 }
@@ -26,24 +26,6 @@ interface DataProps {
     revision: string;
   };
 }
-
-const Container = styled.div`
-  padding: 1rem 2rem;
-`;
-
-const Headers = styled.p`
-  margin: 0;
-  line-height: 1.4rem;
-`;
-
-const RedHighlight = styled.span`
-  color: ${(props) => props.theme.colors.red};
-  text-decoration: underline dashed;
-`;
-
-const Body = styled.p`
-  white-space: pre;
-`;
 
 export const query = graphql`
   query RecommendationsMarkdown {

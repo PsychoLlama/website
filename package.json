@@ -33,6 +33,7 @@
   "dependencies": {
     "@fontsource-variable/fira-code": "^5.0.16",
     "babel-plugin-styled-components": "^2.1.4",
+    "classnames": "^2.5.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.33.2",
     "gatsby": "^5.13.3",
@@ -47,7 +48,10 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
+    "@vanilla-extract/css": "^1.14.1",
+    "@vanilla-extract/webpack-plugin": "^2.3.6",
     "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-vanilla-extract": "^4.0.2",
     "typescript": "^5.3.3"
   }
 }
