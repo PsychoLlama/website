@@ -29,7 +29,7 @@ export default function TmuxShell({
 
     keystack.current = keystack.current.slice(-1).concat(keyChord);
     const prefix = keystack.current[0];
-    const targetWindow = isNaN(keystack.current[1] as any)
+    const targetWindow = isNaN(Number(keystack.current[1]))
       ? Infinity
       : Number(keystack.current[1]) - 1;
 

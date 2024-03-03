@@ -10,7 +10,23 @@
     "build": "gatsby build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "lint": "eslint src --color"
+    "lint": "eslint src --color --ext ts,tsx"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "env": {
+      "browser": true
+    }
   },
   "dependencies": {
     "@fontsource-variable/fira-code": "^5.0.16",
@@ -27,6 +43,8 @@
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
     "gatsby-plugin-manifest": "^5.13.1",
     "typescript": "^5.3.3"
   }
