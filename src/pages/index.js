@@ -1,17 +1,18 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import TmuxShell from '../components/TmuxShell';
 import Anchor from '../components/Anchor';
 import ManPage from '../components/ManPage';
 
+export const Head = () => (
+  <>
+    <title>About | PsychoLlama</title>
+  </>
+);
+
 export default function AboutMe(props) {
   return (
     <TmuxShell currentPage="/" revision={props.data.git.revision}>
-      <Helmet>
-        <title>About | PsychoLlama</title>
-      </Helmet>
-
       <ManPage section="about(7)">
         <h1>About Me</h1>
 

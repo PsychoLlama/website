@@ -13,18 +13,20 @@
     "lint": "eslint src --color"
   },
   "dependencies": {
+    "@fontsource-variable/fira-code": "^5.0.16",
     "babel-plugin-styled-components": "^2.1.4",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.33.2",
     "gatsby": "^5.13.3",
-    "gatsby-plugin-react-helmet": "^6.13.1",
     "gatsby-plugin-styled-components": "^6.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-remark": "^6.13.1",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
     "styled-components": "^6.1.8"
+  },
+  "devDependencies": {
+    "gatsby-plugin-manifest": "^5.13.1"
   }
 }

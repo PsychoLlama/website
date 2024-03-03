@@ -1,8 +1,13 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import Helmet from 'react-helmet';
 import TmuxShell from '../components/TmuxShell';
 import ManPage from '../components/ManPage';
+
+export const Head = () => (
+  <>
+    <title>Recommendations | PsychoLlama</title>
+  </>
+);
 
 export default function Recommendations(props) {
   const [{ html }] = props.data.file.children.filter((child) => child.html);
@@ -10,10 +15,6 @@ export default function Recommendations(props) {
 
   return (
     <TmuxShell currentPage="/recommendations/" revision={revision}>
-      <Helmet>
-        <title>Recommendations | PsychoLlama</title>
-      </Helmet>
-
       <ManPage
         synopsis
         section="recommendations(7)"

@@ -2,7 +2,6 @@
 module.exports = {
   plugins: [
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-git-revision',
     {
       resolve: 'gatsby-source-filesystem',
@@ -11,5 +10,14 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/favicon.png',
+
+        // Copied from `theme.colors.background`.
+        background_color: '#1e1e1e',
+      },
+    },
   ],
 };

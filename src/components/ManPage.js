@@ -140,6 +140,7 @@ const ManPage = styled.main`
     color: ${(props) => props.theme.colors.blue};
     padding: 0.1rem 0.2rem;
     border-radius: 0.2rem;
+    font-family: inherit;
   }
 `;
 
