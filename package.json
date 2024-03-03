@@ -10,7 +10,9 @@
     "build": "gatsby build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "lint": "eslint src --color --ext ts,tsx"
+    "test": "./bin/run-tests",
+    "test:lint": "eslint src --color --ext ts,tsx",
+    "test:types": "tsc"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",

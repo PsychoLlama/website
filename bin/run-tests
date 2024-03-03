@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+
+npm run test:lint || fail=1
+npm run test:types || fail=1
+
+if [[ -n "$fail" ]]; then
+  exit 1
+fi
