@@ -14,17 +14,17 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
-    "eslint": "^8.49.0",
+    "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.33.2",
-    "gatsby": "^5.12.4",
-    "gatsby-plugin-react-helmet": "^6.12.0",
-    "gatsby-plugin-styled-components": "^6.12.0",
-    "gatsby-source-filesystem": "^5.12.0",
-    "gatsby-transformer-remark": "^6.12.0",
-    "prettier": "^3.0.3",
+    "gatsby": "^5.13.3",
+    "gatsby-plugin-react-helmet": "^6.13.1",
+    "gatsby-plugin-styled-components": "^6.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-remark": "^6.13.1",
+    "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "styled-components": "^6.0.7"
+    "styled-components": "^6.1.8"
   }
 }
