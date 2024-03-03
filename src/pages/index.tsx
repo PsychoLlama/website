@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link, PageProps, graphql } from 'gatsby';
 import TmuxShell from '../components/TmuxShell';
 import Anchor from '../components/Anchor';
 import ManPage from '../components/ManPage';
@@ -10,7 +10,7 @@ export const Head = () => (
   </>
 );
 
-export default function AboutMe(props) {
+export default function AboutMe(props: PageProps<DataProps>) {
   return (
     <TmuxShell currentPage="/" revision={props.data.git.revision}>
       <ManPage section="about(7)">
@@ -96,6 +96,12 @@ export default function AboutMe(props) {
       </ManPage>
     </TmuxShell>
   );
+}
+
+interface DataProps {
+  git: {
+    revision: string;
+  };
 }
 
 export const query = graphql`

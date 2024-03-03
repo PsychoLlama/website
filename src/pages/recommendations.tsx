@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { PageProps, graphql } from 'gatsby';
 import React from 'react';
 import TmuxShell from '../components/TmuxShell';
 import ManPage from '../components/ManPage';
@@ -9,7 +9,7 @@ export const Head = () => (
   </>
 );
 
-export default function Recommendations(props) {
+export default function Recommendations(props: PageProps<DataProps>) {
   const [{ html }] = props.data.file.children.filter((child) => child.html);
   const { revision } = props.data.git;
 
@@ -22,6 +22,16 @@ export default function Recommendations(props) {
       />
     </TmuxShell>
   );
+}
+
+interface DataProps {
+  git: {
+    revision: string;
+  };
+
+  file: {
+    children: Array<{ html: string }>;
+  };
 }
 
 export const query = graphql`

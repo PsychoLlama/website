@@ -1,5 +1,5 @@
-/* eslint-env node */
-const { execSync } = require('child_process');
+import { execSync } from 'child_process';
+import { CreateResolversArgs, SourceNodesArgs } from 'gatsby';
 
 /**
  * A hacky Gatsby plugin to pull the current git revision. I have no idea what
@@ -11,7 +11,7 @@ const { execSync } = require('child_process');
  * }
  */
 
-exports.createResolvers = ({ createResolvers }) => {
+export const createResolvers = ({ createResolvers }: CreateResolversArgs) => {
   createResolvers({
     Query: {
       git: {
@@ -32,7 +32,7 @@ exports.createResolvers = ({ createResolvers }) => {
   });
 };
 
-exports.sourceNodes = ({ actions }) => {
+export const sourceNodes = ({ actions }: SourceNodesArgs) => {
   actions.createTypes(`
     type GitMetadata implements Node {
       revision: String

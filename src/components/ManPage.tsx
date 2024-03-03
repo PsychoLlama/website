@@ -6,7 +6,7 @@ import styled from 'styled-components';
  * dedicated styled-components instead of children selectors, but it has to
  * work with markdown's generated HTML.
  */
-const ManPage = styled.main`
+const ManPage = styled.main<{ synopsis?: boolean; section: string }>`
   padding: 0.5rem 1rem;
   line-height: 1.4rem;
 

@@ -2,15 +2,23 @@ import React, { useEffect, useCallback, useRef } from 'react';
 import styled from 'styled-components';
 import { Link, navigate } from 'gatsby';
 
-export default function TmuxShell({ children, currentPage, revision }) {
+export default function TmuxShell({
+  children,
+  currentPage,
+  revision,
+}: {
+  children: React.ReactNode;
+  currentPage?: string;
+  revision: string;
+}) {
   const links = [
     { name: 'About', target: '/' },
     { name: 'Recommendations', target: '/recommendations/' },
   ];
 
-  const keystack = useRef([]);
+  const keystack = useRef<Array<string>>([]);
 
-  const detectWindowNavigation = useCallback((event) => {
+  const detectWindowNavigation = useCallback((event: KeyboardEvent) => {
     const keyChord = getKeyChord(event);
 
     if (keyChord === 'ctrl+b') {
@@ -21,7 +29,7 @@ export default function TmuxShell({ children, currentPage, revision }) {
 
     keystack.current = keystack.current.slice(-1).concat(keyChord);
     const prefix = keystack.current[0];
-    const targetWindow = isNaN(keystack.current[1])
+    const targetWindow = isNaN(keystack.current[1] as any)
       ? Infinity
       : Number(keystack.current[1]) - 1;
 
@@ -65,7 +73,7 @@ export default function TmuxShell({ children, currentPage, revision }) {
   );
 }
 
-const getKeyChord = (event) => {
+const getKeyChord = (event: KeyboardEvent) => {
   const sequence = [
     event.ctrlKey && 'ctrl',
     event.altKey && 'alt',

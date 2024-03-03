@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql } from 'gatsby';
+import { PageProps, graphql } from 'gatsby';
 import TmuxShell from '../components/TmuxShell';
 
-export default function BlameMongoDb(props) {
+export default function BlameMongoDb(props: PageProps<DataProps>) {
   return (
     <TmuxShell revision={props.data?.git.revision}>
       <Container>
@@ -19,6 +19,12 @@ export default function BlameMongoDb(props) {
       </Container>
     </TmuxShell>
   );
+}
+
+interface DataProps {
+  git: {
+    revision: string;
+  };
 }
 
 const Container = styled.div`

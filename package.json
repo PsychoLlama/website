@@ -27,6 +27,7 @@
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
-    "gatsby-plugin-manifest": "^5.13.1"
+    "gatsby-plugin-manifest": "^5.13.1",
+    "typescript": "^5.3.3"
   }
 }

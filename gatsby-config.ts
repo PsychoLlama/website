@@ -1,5 +1,6 @@
-/* eslint-env node */
-module.exports = {
+import type { GatsbyConfig } from 'gatsby';
+
+const config: GatsbyConfig = {
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-git-revision',
@@ -21,3 +22,5 @@ module.exports = {
     },
   ],
 };
+
+export default config;

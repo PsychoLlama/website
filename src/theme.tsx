@@ -1,8 +1,9 @@
 import { ThemeProvider } from 'styled-components';
 import React from 'react';
+import type { WrapRootElementNodeArgs } from 'gatsby';
 import './global.css';
 
-export default function Theme({ element }) {
+export default function Theme({ element }: WrapRootElementNodeArgs) {
   return <ThemeProvider theme={oneDark}>{element}</ThemeProvider>;
 }
 
