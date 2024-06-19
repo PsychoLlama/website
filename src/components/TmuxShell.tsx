@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback, useRef } from 'react';
 import { Link, navigate } from 'gatsby';
 import * as styles from './TmuxShell.css';
+import { ExternalLink } from './ExternalLink';
 import cx from 'classnames';
 
 export default function TmuxShell({
@@ -54,14 +55,14 @@ export default function TmuxShell({
 
       <nav className={styles.navigation}>
         <p className={cx(styles.navItem, styles.revision)}>
-          <Link
-            to="https://github.com/PsychoLlama/website"
+          <ExternalLink
+            href="https://github.com/PsychoLlama/website"
             title="View source on GitHub"
             target="_blank"
             className={styles.githubLink}
           >
             {revision ?? 'HEAD'}
-          </Link>
+          </ExternalLink>
         </p>
 
         <ul className={styles.links}>

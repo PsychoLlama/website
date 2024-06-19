@@ -1,6 +1,6 @@
 import React from 'react';
 import * as styles from './ManPage.css';
-import A from './Anchor';
+import { ExternalLink } from './ExternalLink';
 
 /**
  * Styles HTML to look like a man page viewed by neovim under the OneDark
@@ -28,7 +28,7 @@ export function Paragraph(props: { children: React.ReactNode }) {
 }
 
 export function Anchor(props: React.ComponentPropsWithoutRef<'a'>) {
-  return <A {...props} className={styles.link} />;
+  return <ExternalLink {...props} className={styles.link} />;
 }
 
 export function DefinitionList(props: { children: React.ReactNode }) {
