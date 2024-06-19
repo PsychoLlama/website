@@ -15,7 +15,7 @@ export const theme = createGlobalTheme(':root', {
 
 globalStyle('body', {
   margin: 0,
-  fontFamily: ['Fira Code Variable', 'monospace'],
+  fontFamily: 'Fira Code Variable, monospace',
 });
 
 globalStyle('html', {
