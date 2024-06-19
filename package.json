@@ -32,18 +32,15 @@
   },
   "dependencies": {
     "@fontsource-variable/fira-code": "^5.0.16",
-    "babel-plugin-styled-components": "^2.1.4",
     "classnames": "^2.5.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.33.2",
     "gatsby": "^5.13.3",
-    "gatsby-plugin-styled-components": "^6.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-remark": "^6.13.1",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "styled-components": "^6.1.8"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.1.0",

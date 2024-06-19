@@ -2,7 +2,6 @@ import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   plugins: [
-    'gatsby-plugin-styled-components',
     'gatsby-plugin-git-revision',
     'gatsby-plugin-vanilla-extract',
     {
