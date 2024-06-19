@@ -23,7 +23,9 @@ export default function AboutMe(props: PageProps<DataProps>) {
   return (
     <TmuxShell currentPage="/" revision={props.data.git.revision}>
       <ManPage>
-        <Title section="about(7)">About Me</Title>
+        <Title section="about(7)" synopsis>
+          About Me
+        </Title>
 
         <Subheading>Synopsis</Subheading>
         <Paragraph>

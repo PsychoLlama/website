@@ -11,9 +11,17 @@ export function ManPage({ children }: { children: React.ReactNode }) {
 }
 
 /** Page title. Includes surrounding `section(n)` tags. */
-export function Title(props: { section: string; children: React.ReactNode }) {
+export function Title(props: {
+  section: string;
+  synopsis?: boolean;
+  children: React.ReactNode;
+}) {
   return (
-    <h1 className={styles.title} data-section={props.section}>
+    <h1
+      className={styles.title}
+      data-section={props.section}
+      data-synopsis={props.synopsis}
+    >
       {props.children}
     </h1>
   );

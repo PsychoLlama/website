@@ -11,7 +11,7 @@ export const title = style({
   justifyContent: 'space-between',
   flexGrow: 1,
   color: theme.color.green,
-  paddingBottom: '1rem',
+  paddingBottom: '2rem',
   fontSize: 'inherit',
   margin: 0,
   fontWeight: 'normal',
@@ -26,6 +26,10 @@ export const title = style({
           display: 'none',
         },
       },
+    },
+
+    '&[data-synopsis="true"]': {
+      paddingBottom: '1rem',
     },
   },
 });
