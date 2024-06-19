@@ -2,6 +2,7 @@ import { PageProps, graphql } from 'gatsby';
 import React from 'react';
 import TmuxShell from '../components/TmuxShell';
 import ManPage from '../components/ManPage';
+import Markdown, { type HtmlAst } from '../components/Markdown';
 
 export const Head = () => (
   <>
@@ -10,16 +11,14 @@ export const Head = () => (
 );
 
 export default function Recommendations(props: PageProps<DataProps>) {
-  const [{ html }] = props.data.file.children.filter((child) => child.html);
+  const [{ htmlAst }] = props.data.file.children;
   const { revision } = props.data.git;
 
   return (
     <TmuxShell currentPage="/recommendations/" revision={revision}>
-      <ManPage
-        synopsis
-        section="recommendations(7)"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <ManPage synopsis section="recommendations(7)">
+        <Markdown htmlAst={htmlAst} />
+      </ManPage>
     </TmuxShell>
   );
 }
@@ -30,7 +29,7 @@ interface DataProps {
   };
 
   file: {
-    children: Array<{ html: string }>;
+    children: [{ html: string; htmlAst: HtmlAst }];
   };
 }
 
@@ -43,7 +42,7 @@ export const query = graphql`
     file(name: { eq: "recommendations" }) {
       children {
         ... on MarkdownRemark {
-          html
+          htmlAst
         }
       }
     }

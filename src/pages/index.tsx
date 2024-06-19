@@ -105,7 +105,7 @@ interface DataProps {
 }
 
 export const query = graphql`
-  query RecommendationsMarkdown {
+  query MainPage {
     git {
       revision
     }
