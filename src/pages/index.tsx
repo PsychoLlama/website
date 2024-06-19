@@ -1,8 +1,17 @@
 import React from 'react';
 import { Link, PageProps, graphql } from 'gatsby';
 import TmuxShell from '../components/TmuxShell';
-import Anchor from '../components/Anchor';
-import ManPage from '../components/ManPage';
+import * as styles from '../components/ManPage.css';
+import {
+  ManPage,
+  Title,
+  Subheading,
+  Paragraph,
+  Anchor,
+  DefinitionList,
+  DefinitionTerm,
+  DefinitionDescription,
+} from '../components/ManPage';
 
 export const Head = () => (
   <>
@@ -13,31 +22,31 @@ export const Head = () => (
 export default function AboutMe(props: PageProps<DataProps>) {
   return (
     <TmuxShell currentPage="/" revision={props.data.git.revision}>
-      <ManPage section="about(7)">
-        <h1>About Me</h1>
+      <ManPage>
+        <Title section="about(7)">About Me</Title>
 
-        <h2>Synopsis</h2>
-        <p>
+        <Subheading>Synopsis</Subheading>
+        <Paragraph>
           <strong>Jesse Gibson</strong> - American computer programmer.
-        </p>
+        </Paragraph>
 
-        <h2>Company</h2>
-        <p>
+        <Subheading>Company</Subheading>
+        <Paragraph>
           I am on the <Anchor href="https://www.coscreen.co/">CoScreen</Anchor>{' '}
           team at <Anchor href="https://www.datadoghq.com/">Datadog</Anchor>.
-        </p>
+        </Paragraph>
 
-        <h2>Social</h2>
-        <p>
+        <Subheading>Social</Subheading>
+        <Paragraph>
           Whenever the tradeoffs are reasonable, I prefer to use Free and Open
           Source Software instead of major technology products. These choices
           are reflected by my on-line presence. You won&apos;t find me on
           Twitter or Facebook.
-        </p>
+        </Paragraph>
 
-        <dl>
-          <dt>microblog</dt>
-          <dd>
+        <DefinitionList>
+          <DefinitionTerm>microblog</DefinitionTerm>
+          <DefinitionDescription>
             ActivityPub platforms are a spark of wonder in a dark world, and
             Mastodon is their leader. I post under the handle{' '}
             <Anchor
@@ -52,47 +61,49 @@ export default function AboutMe(props: PageProps<DataProps>) {
               Pixelfed
             </Anchor>
             ).
-          </dd>
+          </DefinitionDescription>
 
-          <dt>chat</dt>
-          <dd>
+          <DefinitionTerm>chat</DefinitionTerm>
+          <DefinitionDescription>
             Matrix is an open standard for encrypted chat. My address is{' '}
             <Anchor href="https://matrix.to/#/@psychollama271:matrix.org">
               @psychollama271:matrix.org
             </Anchor>
             . Remember, the faster we adopt Matrix, the faster XMPP can be put
             to rest. In hell.
-          </dd>
+          </DefinitionDescription>
 
-          <dt>source-control</dt>
-          <dd>
+          <DefinitionTerm>source-control</DefinitionTerm>
+          <DefinitionDescription>
             All my public work is done under the username{' '}
             <Anchor href="https://github.com/PsychoLlama">@PsychoLlama</Anchor>{' '}
             on GitHub&hellip; for now. Eagerly awaiting federation support for
             self-hosted alternatives.
-          </dd>
-        </dl>
+          </DefinitionDescription>
+        </DefinitionList>
 
-        <p>
+        <Paragraph>
           If you haven&apos;t used Mastodon, I highly recommend it. Very few
           open source projects actually benefit from more users, but social
           media platforms are the perfect exception. It&apos;s the easiest way
           to contribute to something bigger.
-        </p>
+        </Paragraph>
 
-        <h2>Interests</h2>
-        <p>
+        <Subheading>Interests</Subheading>
+        <Paragraph>
           CRDTs, Peer-to-Peer systems, terminals, CLI tools (see{' '}
-          <Link to="/recommendations">recommendations</Link>
+          <Link className={styles.link} to="/recommendations">
+            recommendations
+          </Link>
           ), and writing the occasional Vim plugin. Sometimes Stockholm Syndrome
           from a career in JavaScript drives interest in web development too.
-        </p>
+        </Paragraph>
 
-        <p>
+        <Paragraph>
           When I&apos;m not writing software, I enjoy science fiction, exploring
           big cities, COD, playing guitar, and thinking about writing more
           software.
-        </p>
+        </Paragraph>
       </ManPage>
     </TmuxShell>
   );

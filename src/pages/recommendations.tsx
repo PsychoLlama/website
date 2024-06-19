@@ -1,8 +1,8 @@
 import { PageProps, graphql } from 'gatsby';
 import React from 'react';
 import TmuxShell from '../components/TmuxShell';
-import ManPage from '../components/ManPage';
-import Markdown, { type HtmlAst } from '../components/Markdown';
+import { ManPage } from '../components/ManPage';
+import ManPageHtml, { type HtmlAst } from '../components/ManPageHtml';
 
 export const Head = () => (
   <>
@@ -16,8 +16,8 @@ export default function Recommendations(props: PageProps<DataProps>) {
 
   return (
     <TmuxShell currentPage="/recommendations/" revision={revision}>
-      <ManPage synopsis section="recommendations(7)">
-        <Markdown htmlAst={htmlAst} />
+      <ManPage>
+        <ManPageHtml node={htmlAst.children} section="recommendations(7)" />
       </ManPage>
     </TmuxShell>
   );
