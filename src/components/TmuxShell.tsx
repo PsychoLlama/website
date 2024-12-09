@@ -3,6 +3,7 @@ import { Link, navigate } from 'gatsby';
 import * as styles from './TmuxShell.css';
 import { ExternalLink } from './ExternalLink';
 import cx from 'classnames';
+import type { navigate as Navigate } from '@reach/router';
 
 export default function TmuxShell({
   children,
@@ -36,7 +37,7 @@ export default function TmuxShell({
       : Number(keystack.current[1]) - 1;
 
     if (prefix === 'ctrl+b' && targetWindow < links.length) {
-      navigate(links[targetWindow].target);
+      (navigate as typeof Navigate)(links[targetWindow].target);
     }
 
     return navigate;
