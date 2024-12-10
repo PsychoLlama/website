@@ -68,7 +68,7 @@ export default function TmuxShell({
             target="_blank"
             className={styles.githubLink}
           >
-            {data.git?.revision ?? 'HEAD'}
+            {data.git.revision}
           </ExternalLink>
         </p>
 

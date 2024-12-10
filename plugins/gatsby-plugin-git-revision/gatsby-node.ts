@@ -1,4 +1,5 @@
-import { execSync } from 'child_process';
+import { promisify } from 'util';
+import { exec } from 'child_process';
 import { CreateResolversArgs, SourceNodesArgs } from 'gatsby';
 
 /**
@@ -11,20 +12,19 @@ import { CreateResolversArgs, SourceNodesArgs } from 'gatsby';
  * }
  */
 
-export const createResolvers = ({ createResolvers }: CreateResolversArgs) => {
-  createResolvers({
+export const createResolvers = (actions: CreateResolversArgs) => {
+  actions.createResolvers({
     Query: {
       git: {
-        type: 'GitMetadata',
-        resolve() {
+        async resolve() {
           const branch = 'HEAD';
-          const revision = execSync(`git rev-parse --short ${branch}`)
-            .toString()
-            .trim();
+          const { stdout } = await promisify(exec)(
+            `git rev-parse --short ${branch}`,
+          );
 
           return {
             id: branch,
-            revision,
+            revision: stdout.toString().trim(),
           };
         },
       },
@@ -32,10 +32,14 @@ export const createResolvers = ({ createResolvers }: CreateResolversArgs) => {
   });
 };
 
-export const sourceNodes = ({ actions }: SourceNodesArgs) => {
+export const createSchemaCustomization = ({ actions }: SourceNodesArgs) => {
   actions.createTypes(`
-    type GitMetadata implements Node {
-      revision: String
+    type Query {
+      git: GitMetadata!
+    }
+
+    type GitMetadata {
+      revision: String!
     }
   `);
 };
