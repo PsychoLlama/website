@@ -10,7 +10,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: './src/assets/vim-gutter-symbol.svg',
+        path: './src/images',
       },
     },
     'gatsby-transformer-remark',
