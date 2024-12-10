@@ -8,11 +8,11 @@
   "repository": "github:PsychoLlama/website",
   "scripts": {
     "build": "gatsby build",
-    "start": "gatsby develop",
+    "develop": "gatsby develop",
     "serve": "gatsby serve",
     "test": "./bin/run-tests",
-    "test:lint": "eslint src --color",
-    "test:types": "tsc"
+    "lint": "eslint src --color",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@fontsource-variable/fira-code": "^5.1.0",
