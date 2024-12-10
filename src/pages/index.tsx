@@ -71,8 +71,7 @@ export default function AboutMe() {
             <Anchor href="https://matrix.to/#/@psychollama271:matrix.org">
               @psychollama271:matrix.org
             </Anchor>
-            . Remember, the faster we adopt Matrix, the faster XMPP can be put
-            to rest. In hell.
+            .
           </DefinitionDescription>
 
           <DefinitionTerm>source-control</DefinitionTerm>
