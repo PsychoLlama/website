@@ -12,10 +12,9 @@ export const Head = () => (
 
 export default function Recommendations(props: PageProps<DataProps>) {
   const [{ htmlAst }] = props.data.file.children;
-  const { revision } = props.data.git;
 
   return (
-    <TmuxShell currentPage="/recommendations/" revision={revision}>
+    <TmuxShell currentPage="/recommendations/">
       <ManPage>
         <ManPageHtml node={htmlAst.children} section="recommendations(7)" />
       </ManPage>
@@ -23,11 +22,7 @@ export default function Recommendations(props: PageProps<DataProps>) {
   );
 }
 
-interface DataProps {
-  git: {
-    revision: string;
-  };
-
+interface DataProps extends Queries.RecommendationsMarkdownQuery {
   file: {
     children: [{ html: string; htmlAst: HtmlAst }];
   };
@@ -35,10 +30,6 @@ interface DataProps {
 
 export const query = graphql`
   query RecommendationsMarkdown {
-    git {
-      revision
-    }
-
     file(name: { eq: "recommendations" }) {
       children {
         ... on MarkdownRemark {

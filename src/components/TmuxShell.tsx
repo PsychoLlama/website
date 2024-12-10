@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useRef } from 'react';
-import { Link, navigate } from 'gatsby';
+import { Link, navigate, useStaticQuery, graphql } from 'gatsby';
 import * as styles from './TmuxShell.css';
 import { ExternalLink } from './ExternalLink';
 import cx from 'classnames';
@@ -8,12 +8,18 @@ import type { navigate as Navigate } from '@reach/router';
 export default function TmuxShell({
   children,
   currentPage,
-  revision,
 }: {
   children: React.ReactNode;
   currentPage?: string;
-  revision: string;
 }) {
+  const data: Queries.BuildDetailsQuery = useStaticQuery(graphql`
+    query BuildDetails {
+      git {
+        revision
+      }
+    }
+  `);
+
   const links = [
     { name: 'About', target: '/' },
     { name: 'Recommendations', target: '/recommendations/' },
@@ -62,7 +68,7 @@ export default function TmuxShell({
             target="_blank"
             className={styles.githubLink}
           >
-            {revision ?? 'HEAD'}
+            {data.git?.revision ?? 'HEAD'}
           </ExternalLink>
         </p>
 

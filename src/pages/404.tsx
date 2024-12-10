@@ -1,11 +1,10 @@
 import React from 'react';
-import { PageProps, graphql } from 'gatsby';
 import TmuxShell from '../components/TmuxShell';
 import * as styles from './_404.css';
 
-export default function BlameMongoDb(props: PageProps<DataProps>) {
+export default function BlameMongoDb() {
   return (
-    <TmuxShell revision={props.data?.git.revision}>
+    <TmuxShell>
       <div className={styles.container}>
         <p className={styles.headers}>
           HTTP/1.1 <span className={styles.redHighlight}>404</span>
@@ -20,17 +19,3 @@ export default function BlameMongoDb(props: PageProps<DataProps>) {
     </TmuxShell>
   );
 }
-
-interface DataProps {
-  git: {
-    revision: string;
-  };
-}
-
-export const query = graphql`
-  query RecommendationsMarkdown {
-    git {
-      revision
-    }
-  }
-`;
