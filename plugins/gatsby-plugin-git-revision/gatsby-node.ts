@@ -1,20 +1,19 @@
 import { promisify } from 'util';
 import { exec } from 'child_process';
-import { CreateResolversArgs, SourceNodesArgs } from 'gatsby';
+import { GatsbyNode } from 'gatsby';
 
 /**
- * A hacky Gatsby plugin to pull the current git revision. I have no idea what
- * I'm doing.
- *
  * @example
  * query {
- *   git { revision }
+ *   siteBuildMetadata {
+ *     git { revision }
+ *   }
  * }
  */
 
-export const createResolvers = (actions: CreateResolversArgs) => {
+export const createResolvers: GatsbyNode['createResolvers'] = (actions) => {
   actions.createResolvers({
-    Query: {
+    SiteBuildMetadata: {
       git: {
         async resolve() {
           const branch = 'HEAD';
@@ -32,14 +31,16 @@ export const createResolvers = (actions: CreateResolversArgs) => {
   });
 };
 
-export const createSchemaCustomization = ({ actions }: SourceNodesArgs) => {
-  actions.createTypes(`
-    type Query {
-      git: GitMetadata!
-    }
+export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] =
+  ({ actions }) => {
+    actions.createTypes(`
+      type SiteBuildMetadata {
+        git: GitRepositoryMetadata!
+      }
 
-    type GitMetadata {
-      revision: String!
-    }
+      # Information about the git repo.
+      type GitRepositoryMetadata {
+        revision: String!
+      }
   `);
-};
+  };

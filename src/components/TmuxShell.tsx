@@ -14,8 +14,10 @@ export default function TmuxShell({
 }) {
   const data: Queries.BuildDetailsQuery = useStaticQuery(graphql`
     query BuildDetails {
-      git {
-        revision
+      siteBuildMetadata {
+        git {
+          revision
+        }
       }
     }
   `);
@@ -68,7 +70,7 @@ export default function TmuxShell({
             target="_blank"
             className={styles.githubLink}
           >
-            {data.git.revision}
+            {data.siteBuildMetadata.git.revision}
           </ExternalLink>
         </p>
 
