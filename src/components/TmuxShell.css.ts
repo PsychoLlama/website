@@ -74,7 +74,7 @@ export const links = style({
   margin: 0,
   listStyleType: 'none',
   display: 'flex',
-  counterSet: 'nav-link 0',
+  counterSet: 'nav-link -1',
 });
 
 export const githubLink = style({

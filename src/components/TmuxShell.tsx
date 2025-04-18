@@ -27,28 +27,59 @@ export default function TmuxShell({
     { name: 'Recommendations', target: '/recommendations/' },
   ];
 
-  const keystack = useRef<Array<string>>([]);
+  const linkIndex = links.findIndex((link) => link.target === currentPage);
+
+  // Key chord of the last key pressed.
+  const prevKey = useRef<string>('');
 
   const detectWindowNavigation = useCallback((event: KeyboardEvent) => {
     const keyChord = getKeyChord(event);
 
+    const commitEvent = () => {
+      event.preventDefault();
+      event.stopPropagation();
+      prevKey.current = keyChord;
+    };
+
+    // Prefix key. No action immediately, but the next key might.
     if (keyChord === 'ctrl+b') {
       event.preventDefault();
       event.stopPropagation();
-      keystack.current = [];
+      prevKey.current = keyChord;
+      return;
     }
 
-    keystack.current = keystack.current.slice(-1).concat(keyChord);
-    const prefix = keystack.current[0];
-    const targetWindow = isNaN(Number(keystack.current[1]))
-      ? Infinity
-      : Number(keystack.current[1]) - 1;
+    const numKey = parseInt(keyChord, 10);
 
-    if (prefix === 'ctrl+b' && targetWindow < links.length) {
-      (navigate as typeof Navigate)(links[targetWindow].target);
+    // Example: ctrl+b, key=2: nav to window 2.
+    if (
+      prevKey.current === 'ctrl+b' &&
+      !isNaN(numKey) &&
+      numKey < links.length
+    ) {
+      commitEvent();
+      (navigate as typeof Navigate)(links[numKey].target);
+
+      return;
     }
 
-    return navigate;
+    // Example: ctrl+b, key=n: nav to next window.
+    if (
+      prevKey.current === 'ctrl+b' &&
+      (event.key === 'n' || event.key === 'p')
+    ) {
+      commitEvent();
+
+      const relativeIndex = event.key === 'n' ? 1 : -1;
+      const newIndex =
+        (linkIndex + relativeIndex + links.length) % links.length;
+
+      (navigate as typeof Navigate)(links[newIndex].target);
+
+      return;
+    }
+
+    prevKey.current = keyChord;
   }, []);
 
   useEffect(() => {
@@ -70,7 +101,7 @@ export default function TmuxShell({
             target="_blank"
             className={styles.githubLink}
           >
-            {data.siteBuildMetadata.git.revision}
+            {data.siteBuildMetadata!.git.revision}
           </ExternalLink>
         </p>
 
