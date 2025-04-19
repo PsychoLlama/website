@@ -1,6 +1,9 @@
 import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
+  siteMetadata: {
+    siteUrl: 'https://psychollama.io',
+  },
   graphqlTypegen: {
     generateOnBuild: true,
   },

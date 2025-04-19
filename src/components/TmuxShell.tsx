@@ -3,7 +3,7 @@ import { Link, navigate, useStaticQuery, graphql } from 'gatsby';
 import * as styles from './TmuxShell.css';
 import { ExternalLink } from './ExternalLink';
 import cx from 'classnames';
-import type { navigate as Navigate } from '@reach/router';
+import { type navigate as Navigate } from '@reach/router';
 
 export default function TmuxShell({
   children,
@@ -14,6 +14,12 @@ export default function TmuxShell({
 }) {
   const data: Queries.BuildDetailsQuery = useStaticQuery(graphql`
     query BuildDetails {
+      site {
+        siteMetadata {
+          siteUrl
+        }
+      }
+
       siteBuildMetadata {
         git {
           revision
@@ -25,6 +31,7 @@ export default function TmuxShell({
   const links = [
     { name: 'About', target: '/' },
     { name: 'Recommendations', target: '/recommendations/' },
+    { name: 'Blog', target: 'https://blog.psychollama.io' },
   ];
 
   const linkIndex = links.findIndex((link) => link.target === currentPage);
@@ -112,9 +119,18 @@ export default function TmuxShell({
               key={index}
               data-active={currentPage === link.target}
             >
-              <Link to={link.target} className={styles.navLink}>
-                {link.name}
-              </Link>
+              {isExternalLink(
+                link.target,
+                data.site!.siteMetadata!.siteUrl!,
+              ) ? (
+                <ExternalLink href={link.target} className={styles.navLink}>
+                  {link.name}
+                </ExternalLink>
+              ) : (
+                <Link to={link.target} className={styles.navLink}>
+                  {link.name}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -132,4 +148,9 @@ const getKeyChord = (event: KeyboardEvent) => {
   ];
 
   return sequence.filter(Boolean).join('+');
+};
+
+const isExternalLink = (href: string, origin: string) => {
+  const link = new URL(href, origin);
+  return link.host !== new URL(origin).host;
 };
