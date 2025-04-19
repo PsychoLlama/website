@@ -90,7 +90,7 @@ export default function AboutMe() {
           <DefinitionTerm>weblog</DefinitionTerm>
           <DefinitionDescription>
             Long-form posts about software live on my blog,{' '}
-            <Anchor rel="me" target="_blank" href="https://blog.psychollama.io">
+            <Anchor href="https://blog.psychollama.io">
               Asap&apos;s Fables
             </Anchor>
             .
