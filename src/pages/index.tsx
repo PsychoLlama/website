@@ -40,70 +40,77 @@ export default function AboutMe() {
 
         <Subheading>Social</Subheading>
         <Paragraph>
-          Whenever the tradeoffs are reasonable, I prefer to use Free and Open
-          Source Software instead of major technology products. These choices
-          are reflected by my on-line presence. You won&apos;t find me on
-          Twitter or Facebook.
+          Whenever tradeoffs are reasonable I prefer Free and Open Source
+          Software over major tech products. These choices are reflected by my
+          on-line presence. You won&apos;t find me on Twitter or Facebook.
         </Paragraph>
 
         <DefinitionList>
-          <DefinitionTerm>microblog</DefinitionTerm>
+          <DefinitionTerm>social</DefinitionTerm>
           <DefinitionDescription>
-            ActivityPub platforms are a spark of wonder in a dark world, and
-            Mastodon is their leader. I post under the handle{' '}
+            I like the smaller neighborhood feel of the Fediverse. I post
+            infrequently on{' '}
             <Anchor
               rel="me"
               target="_blank"
               href="https://fosstodon.org/@PsychoLlama"
             >
-              @PsychoLlama@fosstodon.org
+              Mastodon
             </Anchor>{' '}
-            (see also:{' '}
+            and{' '}
             <Anchor target="_blank" href="https://pixelfed.social/PsychoLlama">
               Pixelfed
             </Anchor>
-            ).
+            . A little on{' '}
+            <Anchor
+              target="_blank"
+              href="https://bsky.app/profile/sourcemap.bsky.social"
+            >
+              Bluesky
+            </Anchor>{' '}
+            too, but it hasn't stuck.
           </DefinitionDescription>
 
-          <DefinitionTerm>chat</DefinitionTerm>
+          <DefinitionTerm>messaging</DefinitionTerm>
           <DefinitionDescription>
-            Matrix is an open standard for encrypted chat. My address is{' '}
+            Matrix is an open standard for real-time encrypted chat. My address
+            is{' '}
             <Anchor href="https://matrix.to/#/@psychollama271:matrix.org">
               @psychollama271:matrix.org
             </Anchor>
             .
           </DefinitionDescription>
 
-          <DefinitionTerm>source-control</DefinitionTerm>
+          <DefinitionTerm>software</DefinitionTerm>
           <DefinitionDescription>
-            All my public work is done under the username{' '}
-            <Anchor href="https://github.com/PsychoLlama">@PsychoLlama</Anchor>{' '}
-            on GitHub&hellip; for now. Eagerly awaiting federation support for
-            self-hosted alternatives.
+            Strong network effects keep me on GitHub. Most projects are under{' '}
+            <Anchor href="https://github.com/PsychoLlama">@PsychoLlama</Anchor>.
+          </DefinitionDescription>
+
+          <DefinitionTerm>weblog</DefinitionTerm>
+          <DefinitionDescription>
+            Long-form posts about software live on my blog,{' '}
+            <Anchor rel="me" target="_blank" href="https://blog.psychollama.io">
+              Asap&apos;s Fables
+            </Anchor>
+            .
           </DefinitionDescription>
         </DefinitionList>
 
-        <Paragraph>
-          If you haven&apos;t used Mastodon, I highly recommend it. Very few
-          open source projects actually benefit from more users, but social
-          media platforms are the perfect exception. It&apos;s the easiest way
-          to contribute to something bigger.
-        </Paragraph>
-
         <Subheading>Interests</Subheading>
         <Paragraph>
-          CRDTs, Peer-to-Peer systems, terminals, CLI tools (see{' '}
+          CRDTs, Peer-to-Peer systems, WebRTC, Nix, Nushell, CLI tools (see{' '}
           <Link className={styles.link} to="/recommendations">
             recommendations
           </Link>
-          ), and writing the occasional Vim plugin. Sometimes Stockholm Syndrome
-          from a career in JavaScript drives interest in web development too.
+          ), and writing the occasional Neovim plugin. Sometimes Stockholm
+          Syndrome from a career in JavaScript drives interest in web
+          development too.
         </Paragraph>
 
         <Paragraph>
           When I&apos;m not writing software, I enjoy science fiction, exploring
-          big cities, COD, playing guitar, and thinking about writing more
-          software.
+          cities, COD, playing guitar, and thinking about writing more software.
         </Paragraph>
       </ManPage>
     </TmuxShell>
