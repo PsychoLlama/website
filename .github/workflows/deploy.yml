@@ -1,25 +1,33 @@
-name: Deploy to GH Pages
+name: Build and Deploy
 
 on:
-  workflow_dispatch:
-  push:
-    branches: main
+  - workflow_dispatch
+  - push
 
 jobs:
-  publish_website:
+  publish:
     runs-on: ubuntu-latest
     name: Publish
+    permissions:
+      contents: read
+      deployments: write
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@main
+      - name: Restore npm cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - run: nix develop --command npm clean-install
       - run: nix develop --command npm run build
-      - name: Deploy to GitHub Pages
-        if: ${{ success() }}
-        uses: crazy-max/ghaction-github-pages@v2
+      - run: nix develop --command npm run test
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
-          target_branch: gh-pages
-          build_dir: public
-          fqdn: psychollama.io
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: deploy
