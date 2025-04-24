@@ -33,7 +33,7 @@
     "@vanilla-extract/webpack-plugin": "^2.3.15",
     "gatsby-plugin-manifest": "^5.14.0",
     "gatsby-plugin-vanilla-extract": "^4.0.2",
-    "globals": "^15.13.0",
+    "globals": "^16.0.0",
     "typescript": "^5.7.2",
     "wrangler": "^4.12.0"
   }
