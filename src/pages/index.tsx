@@ -34,8 +34,8 @@ export default function AboutMe() {
 
         <Subheading>Company</Subheading>
         <Paragraph>
-          I am on the <Anchor href="https://www.coscreen.co/">CoScreen</Anchor>{' '}
-          team at <Anchor href="https://www.datadoghq.com/">Datadog</Anchor>.
+          I work on a platform team at{' '}
+          <Anchor href="https://www.datadoghq.com/">Datadog</Anchor>.
         </Paragraph>
 
         <Subheading>Social</Subheading>
