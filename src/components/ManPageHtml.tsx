@@ -26,6 +26,10 @@ export default function ManPageHtml(props: {
     return node.value;
   }
 
+  if (!node.tagName) {
+    return null;
+  }
+
   switch (node.tagName) {
     case 'h1': {
       return <Title section={section}>{render(node.children)}</Title>;
