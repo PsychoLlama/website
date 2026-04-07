@@ -31,13 +31,6 @@ export default function AboutMe() {
         <Paragraph>
           <strong>Jesse Gibson</strong> - American computer programmer.
         </Paragraph>
-
-        <Subheading>Company</Subheading>
-        <Paragraph>
-          I work on a platform team at{' '}
-          <Anchor href="https://www.datadoghq.com/">Datadog</Anchor>.
-        </Paragraph>
-
         <Subheading>Social</Subheading>
         <Paragraph>
           Whenever tradeoffs are reasonable I prefer Free and Open Source
